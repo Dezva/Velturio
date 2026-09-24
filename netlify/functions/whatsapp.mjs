@@ -261,7 +261,7 @@ export default async (request) => {
         if (value?.metadata?.phone_number_id !== env("WHATSAPP_PHONE_NUMBER_ID")) continue;
         for (const message of value?.messages ?? []) {
           if (message?.type === "text") {
-            jobs.push(processTextMessage(message));
+            jobs.push(sendText(message.from, "Webhook funcionando. test"));
           } else if (message?.from && message?.id) {
             jobs.push(
               (async () => {
