@@ -1,0 +1,16 @@
+{
+  "name": "velturio-whatsapp-bot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Web de Velturio + chatbot de WhatsApp usando Meta Cloud API, OpenAI Responses API y Netlify Functions.",
+  "dependencies": {
+    "@netlify/blobs": "latest"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
