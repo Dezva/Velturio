@@ -11,13 +11,18 @@ function env(name, fallback = "") {
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), {
     status,
-    headers: { "content-type": "application/json; charset=utf-8" },
+    headers: {
+      "content-type": "application/json; charset=utf-8",
+    },
   });
 }
 
 function verifyMetaSignature(rawBody, signature) {
   const secret = env("META_APP_SECRET");
-  if (!secret || !signature?.startsWith("sha256=")) return false;
+
+  if (!secret || !signature?.startsWith("sha256=")) {
+    return false;
+  }
 
   const expected =
     "sha256=" +
@@ -28,13 +33,22 @@ function verifyMetaSignature(rawBody, signature) {
   const a = Buffer.from(signature);
   const b = Buffer.from(expected);
 
-  return a.length === b.length && timingSafeEqual(a, b);
+  return (
+    a.length === b.length &&
+    timingSafeEqual(a, b)
+  );
 }
 
 async function graphRequest(payload) {
   const token = env("WHATSAPP_TOKEN");
-  const phoneNumberId = env("WHATSAPP_PHONE_NUMBER_ID");
-  const version = env("WHATSAPP_GRAPH_VERSION", "v26.0");
+  const phoneNumberId = env(
+    "WHATSAPP_PHONE_NUMBER_ID"
+  );
+
+  const version = env(
+    "WHATSAPP_GRAPH_VERSION",
+    "v26.0"
+  );
 
   if (!token || !phoneNumberId) {
     throw new Error(
@@ -54,7 +68,9 @@ async function graphRequest(payload) {
     }
   );
 
-  const data = await response.json().catch(() => ({}));
+  const data = await response
+    .json()
+    .catch(() => ({}));
 
   if (!response.ok) {
     throw new Error(
@@ -71,7 +87,9 @@ async function markReadAndTyping(messageId) {
       messaging_product: "whatsapp",
       status: "read",
       message_id: messageId,
-      typing_indicator: { type: "text" },
+      typing_indicator: {
+        type: "text",
+      },
     });
   } catch (error) {
     console.warn(
@@ -82,7 +100,9 @@ async function markReadAndTyping(messageId) {
 }
 
 async function sendText(to, body) {
-  const safeBody = String(body || "").slice(0, 4096);
+  const safeBody = String(
+    body || ""
+  ).slice(0, 4096);
 
   return graphRequest({
     messaging_product: "whatsapp",
@@ -107,7 +127,9 @@ function extractOpenAIText(data) {
   const pieces = [];
 
   for (const item of data?.output ?? []) {
-    for (const content of item?.content ?? []) {
+    for (
+      const content of item?.content ?? []
+    ) {
       if (
         content?.type === "output_text" &&
         typeof content.text === "string"
@@ -120,10 +142,21 @@ function extractOpenAIText(data) {
   return pieces.join("\n").trim();
 }
 
-async function getConversation(store, waId) {
-  const saved = await store.get(waId, { type: "json" });
+async function getConversation(
+  store,
+  waId
+) {
+  const saved = await store.get(
+    waId,
+    {
+      type: "json",
+    }
+  );
 
-  if (!saved?.history || !Array.isArray(saved.history)) {
+  if (
+    !saved?.history ||
+    !Array.isArray(saved.history)
+  ) {
     return {
       history: [],
       updatedAt: 0,
@@ -131,26 +164,43 @@ async function getConversation(store, waId) {
   }
 
   const ttlHours =
-    Number(env("CONVERSATION_TTL_HOURS", "24")) || 24;
+    Number(
+      env(
+        "CONVERSATION_TTL_HOURS",
+        "24"
+      )
+    ) || 24;
 
   const expired =
-    Date.now() - Number(saved.updatedAt || 0) >
+    Date.now() -
+      Number(saved.updatedAt || 0) >
     ttlHours * 3600_000;
 
   return expired
-    ? { history: [], updatedAt: 0 }
+    ? {
+        history: [],
+        updatedAt: 0,
+      }
     : saved;
 }
 
-async function askVeli(history, userText) {
-  const apiKey = env("OPENAI_API_KEY");
+async function askVeli(
+  history,
+  userText
+) {
+  const apiKey = env(
+    "OPENAI_API_KEY"
+  );
+
   const model = env(
     "OPENAI_MODEL",
     "gpt-5.6-luna"
   );
 
   if (!apiKey) {
-    throw new Error("Falta OPENAI_API_KEY.");
+    throw new Error(
+      "Falta OPENAI_API_KEY."
+    );
   }
 
   const input = [
@@ -171,7 +221,8 @@ async function askVeli(history, userText) {
       },
       body: JSON.stringify({
         model,
-        instructions: VELTURIO_INSTRUCTIONS,
+        instructions:
+          VELTURIO_INSTRUCTIONS,
         input,
         reasoning: {
           effort: "none",
@@ -188,13 +239,12 @@ async function askVeli(history, userText) {
 
   if (!response.ok) {
     throw new Error(
-      `OpenAI API ${response.status}: ${JSON.stringify(
-        data
-      )}`
+      `OpenAI API ${response.status}: ${JSON.stringify(data)}`
     );
   }
 
-  const reply = extractOpenAIText(data);
+  const reply =
+    extractOpenAIText(data);
 
   if (!reply) {
     throw new Error(
@@ -205,13 +255,20 @@ async function askVeli(history, userText) {
   return reply;
 }
 
-async function processTextMessage(message) {
+async function processTextMessage(
+  message
+) {
   const waId = message.from;
   const messageId = message.id;
+
   const userText =
     message.text?.body?.trim();
 
-  if (!waId || !messageId || !userText) {
+  if (
+    !waId ||
+    !messageId ||
+    !userText
+  ) {
     return;
   }
 
@@ -234,21 +291,29 @@ async function processTextMessage(message) {
       "Mensaje ya procesado:",
       messageId
     );
+
     return;
   }
 
   try {
-    await markReadAndTyping(messageId);
+    await markReadAndTyping(
+      messageId
+    );
 
-    const conversations = getStore({
-      name: "velturio-whatsapp-conversations",
-      consistency: "strong",
-    });
+    const conversations =
+      getStore({
+        name:
+          "velturio-whatsapp-conversations",
+        consistency: "strong",
+      });
 
     if (
-      userText.toLowerCase() === "/reiniciar"
+      userText.toLowerCase() ===
+      "/reiniciar"
     ) {
-      await conversations.delete(waId);
+      await conversations.delete(
+        waId
+      );
 
       await sendText(
         waId,
@@ -269,7 +334,10 @@ async function processTextMessage(message) {
       userText
     );
 
-    await sendText(waId, reply);
+    await sendText(
+      waId,
+      reply
+    );
 
     const newHistory = [
       ...conversation.history,
@@ -304,23 +372,33 @@ async function processTextMessage(message) {
     );
 
     try {
-      await dedupe.delete(messageId);
+      await dedupe.delete(
+        messageId
+      );
     } catch {}
 
     throw error;
   }
 }
 
-export default async (request) => {
-  const url = new URL(request.url);
+export default async (
+  request
+) => {
+  const url = new URL(
+    request.url
+  );
 
   // =========================
   // GET
   // =========================
 
-  if (request.method === "GET") {
+  if (
+    request.method === "GET"
+  ) {
     const mode =
-      url.searchParams.get("hub.mode");
+      url.searchParams.get(
+        "hub.mode"
+      );
 
     const token =
       url.searchParams.get(
@@ -337,7 +415,9 @@ export default async (request) => {
       mode === "subscribe" &&
       token &&
       token ===
-        env("WHATSAPP_VERIFY_TOKEN")
+        env(
+          "WHATSAPP_VERIFY_TOKEN"
+        )
     ) {
       return new Response(
         challenge ?? "",
@@ -347,42 +427,54 @@ export default async (request) => {
       );
     }
 
-    // Test manual desde el navegador
+    // Diagnóstico manual
     return json({
       ok: true,
       service:
         "Velturio WhatsApp Webhook",
       message:
         "Webhook activo",
+
       botEnabled:
         env(
           "BOT_ENABLED",
           "true"
         ).toLowerCase() === "true",
 
-      hasWhatsAppToken: Boolean(
-        env("WHATSAPP_TOKEN")
-      ),
+      hasWhatsAppToken:
+        Boolean(
+          env(
+            "WHATSAPP_TOKEN"
+          )
+        ),
 
-      hasPhoneNumberId: Boolean(
-        env(
-          "WHATSAPP_PHONE_NUMBER_ID"
-        )
-      ),
+      hasPhoneNumberId:
+        Boolean(
+          env(
+            "WHATSAPP_PHONE_NUMBER_ID"
+          )
+        ),
 
-      hasVerifyToken: Boolean(
-        env(
-          "WHATSAPP_VERIFY_TOKEN"
-        )
-      ),
+      hasVerifyToken:
+        Boolean(
+          env(
+            "WHATSAPP_VERIFY_TOKEN"
+          )
+        ),
 
-      hasMetaAppSecret: Boolean(
-        env("META_APP_SECRET")
-      ),
+      hasMetaAppSecret:
+        Boolean(
+          env(
+            "META_APP_SECRET"
+          )
+        ),
 
-      hasOpenAIKey: Boolean(
-        env("OPENAI_API_KEY")
-      ),
+      hasOpenAIKey:
+        Boolean(
+          env(
+            "OPENAI_API_KEY"
+          )
+        ),
 
       model: env(
         "OPENAI_MODEL",
@@ -395,12 +487,15 @@ export default async (request) => {
   // POST
   // =========================
 
-  if (request.method === "POST") {
+  if (
+    request.method === "POST"
+  ) {
     if (
       env(
         "BOT_ENABLED",
         "true"
-      ).toLowerCase() !== "true"
+      ).toLowerCase() !==
+      "true"
     ) {
       return json({
         ok: true,
@@ -411,23 +506,25 @@ export default async (request) => {
     const rawBody =
       await request.text();
 
-    /*
-    ==========================================
-    DIAGNÓSTICO TEMPORAL
-    ==========================================
+    const signature =
+      request.headers.get(
+        "x-hub-signature-256"
+      );
 
-    Normalmente aquí verificamos:
-
-    x-hub-signature-256
-
-    usando META_APP_SECRET.
-
-    Pero por ahora lo dejamos desactivado
-    para comprobar si Meta realmente está
-    enviando mensajes a esta función.
-
-    NO DEJAR ASÍ EN PRODUCCIÓN.
-    */
+    // Validación de seguridad de Meta
+    if (
+      !verifyMetaSignature(
+        rawBody,
+        signature
+      )
+    ) {
+      return new Response(
+        "Invalid signature",
+        {
+          status: 401,
+        }
+      );
+    }
 
     let payload;
 
@@ -446,7 +543,8 @@ export default async (request) => {
     const jobs = [];
 
     for (
-      const entry of payload?.entry ?? []
+      const entry of
+      payload?.entry ?? []
     ) {
       for (
         const change of
@@ -455,32 +553,28 @@ export default async (request) => {
         const value =
           change?.value;
 
-        /*
-        ==========================================
-        DIAGNÓSTICO TEMPORAL
-        ==========================================
-
-        También desactivamos temporalmente
-        esta comprobación:
-
-        value.metadata.phone_number_id
-        === WHATSAPP_PHONE_NUMBER_ID
-
-        para descartar que el problema sea
-        un ID incorrecto.
-        */
+        // Ignora eventos de otro número
+        if (
+          value?.metadata
+            ?.phone_number_id !==
+          env(
+            "WHATSAPP_PHONE_NUMBER_ID"
+          )
+        ) {
+          continue;
+        }
 
         for (
           const message of
           value?.messages ?? []
         ) {
           if (
-            message?.type === "text"
+            message?.type ===
+            "text"
           ) {
             jobs.push(
-              sendText(
-                message.from,
-                "Webhook funcionando. test"
+              processTextMessage(
+                message
               )
             );
           } else if (
@@ -500,10 +594,12 @@ export default async (request) => {
                     JSON.stringify({
                       startedAt:
                         Date.now(),
-                      unsupported: true,
+                      unsupported:
+                        true,
                     }),
                     {
-                      onlyIfNew: true,
+                      onlyIfNew:
+                        true,
                     }
                   );
 
