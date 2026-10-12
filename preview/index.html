@@ -1,0 +1,912 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#040816" />
+  <meta name="description" content="Conocé el portafolio de Velturio: desarrollo de páginas web, sistemas, automatización, marketing y diseño para negocios." />
+  <title>Velturio — Tecnología, diseño y portafolio de proyectos</title>
+  <link rel="icon" href="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%231c6fff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2330e9e8%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22256%22%20height%3D%22256%22%20rx%3D%2245%22%20fill%3D%22%23050d21%22%2F%3E%3Cpath%20d%3D%22M45%2062%20128%20205%20211%2062h-48l-35%2069-35-69Z%22%20fill%3D%22url(%23g)%22%2F%3E%3Cpath%20d%3D%22m128%20176%2044-88%22%20stroke%3D%22%2334eff2%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.65%22%2F%3E%3C%2Fsvg%3E" />
+  <style>
+:root{
+  --bg:#030713; --bg2:#071021; --panel:#0a1325; --panel2:#0d192d;
+  --text:#f7fbff; --muted:#8ea0bb; --line:rgba(126,176,255,.14);
+  --blue:#1474ff; --cyan:#24e4e9; --cyan2:#58f4ff;
+  --grad:linear-gradient(120deg,#1268ff 8%,#20b9f1 55%,#2cf2e2 100%);
+  --shadow:0 30px 90px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden} body.menu-open{overflow:hidden}
+a{color:inherit;text-decoration:none} img{display:block;max-width:100%} button,input,select,textarea{font:inherit}.container{width:min(1180px,calc(100% - 42px));margin-inline:auto}.section-pad{padding:115px 0}.noise{position:fixed;inset:0;z-index:99;pointer-events:none;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.65'/%3E%3C/svg%3E")}.cursor-glow{position:fixed;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(21,117,255,.09),transparent 66%);transform:translate(-50%,-50%);z-index:0;pointer-events:none}
+.site-header{position:fixed;inset:0 0 auto;z-index:80;height:80px;border-bottom:1px solid transparent;transition:.3s}.site-header.scrolled{height:68px;background:rgba(3,7,19,.78);backdrop-filter:blur(18px);border-color:var(--line)}.nav-wrap{height:100%;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.18em;font-size:14px}.brand img{width:35px;height:35px;object-fit:cover;border-radius:7px}.nav{display:flex;align-items:center;gap:30px;color:#b9c7db;font-size:14px}.nav a{transition:.25s}.nav a:hover{color:#fff}.nav-cta{padding:10px 18px!important;border:1px solid rgba(45,231,236,.35);border-radius:999px;color:#fff!important;background:rgba(37,226,233,.06)}.menu-btn{display:none;background:none;border:0;padding:8px}.menu-btn span{display:block;width:24px;height:2px;background:#fff;margin:5px;transition:.25s}
+.hero{position:relative;min-height:860px;padding-top:175px;overflow:hidden;background:radial-gradient(circle at 73% 37%,rgba(13,94,255,.12),transparent 31%),linear-gradient(180deg,#030713 0%,#040919 70%,#030713 100%)}.grid-lines{position:absolute;inset:0;opacity:.27;background-image:linear-gradient(rgba(47,124,235,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(47,124,235,.07) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,transparent 5%,black 38%,transparent 88%)}.orb{position:absolute;border-radius:50%;filter:blur(4px);pointer-events:none}.orb-one{width:540px;height:540px;right:-160px;top:120px;background:radial-gradient(circle at 50% 50%,rgba(35,217,233,.16),rgba(19,106,255,.08) 40%,transparent 70%)}.orb-two{width:420px;height:420px;left:-220px;top:390px;background:radial-gradient(circle,rgba(13,93,255,.12),transparent 67%)}.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:.94fr 1.06fr;gap:66px;align-items:center}.eyebrow,.kicker{font-size:12px;font-weight:800;letter-spacing:.16em;color:#74eaf0}.eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(73,206,255,.16);background:rgba(15,101,183,.08);padding:9px 13px;border-radius:999px;color:#adbed5}.pulse-dot{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 14px var(--cyan)}.hero h1{margin:27px 0 23px;font-size:clamp(53px,5.7vw,84px);line-height:.94;letter-spacing:-.055em;max-width:720px}.hero h1 span,.systems h2 span,.auto-copy h2 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}.hero-text{max-width:580px;color:#9fb0c8;line-height:1.75;font-size:17px}.hero-actions{display:flex;gap:12px;margin-top:32px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;border-radius:10px;padding:15px 20px;font-weight:800;font-size:14px;border:1px solid transparent;transition:.25s}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--grad);color:#02101b;box-shadow:0 8px 30px rgba(24,182,238,.23)}.btn-primary:hover{box-shadow:0 12px 38px rgba(24,182,238,.34)}.btn-ghost{border-color:rgba(156,185,223,.2);background:rgba(255,255,255,.02);color:#dce6f5}.hero-points{display:flex;gap:34px;margin-top:48px;padding-top:25px;border-top:1px solid var(--line);max-width:540px}.hero-points div{display:flex;gap:9px;align-items:flex-start}.hero-points strong{font-size:11px;color:#28dce4}.hero-points span{font-size:12px;color:#7f91aa;line-height:1.3;text-transform:uppercase;letter-spacing:.08em}
+.hero-visual{position:relative;min-height:520px;display:flex;align-items:center;justify-content:center}.halo{position:absolute;width:510px;height:510px;border-radius:50%;border:1px solid rgba(59,185,255,.13);box-shadow:0 0 100px rgba(15,108,255,.09),inset 0 0 90px rgba(18,109,255,.05)}.halo:before,.halo:after{content:"";position:absolute;border-radius:50%;inset:42px;border:1px solid rgba(46,221,234,.1)}.halo:after{inset:92px}.dashboard-shell{width:640px;position:relative;z-index:2;border:1px solid rgba(70,164,255,.25);border-radius:18px;overflow:hidden;background:rgba(7,15,31,.91);box-shadow:0 35px 90px rgba(0,0,0,.5),0 0 70px rgba(16,116,255,.08);transform:perspective(1200px) rotateY(-5deg) rotateX(2deg)}.window-bar{height:42px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 15px;color:#697b95;font-size:10px}.dots{display:flex;gap:5px}.dots i{width:7px;height:7px;border-radius:50%;background:#1c3458}.signal{color:#22c9c8}.dash-body{display:flex;min-height:380px}.dash-sidebar{width:65px;border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:12px;padding:17px 0}.dash-sidebar img{width:31px;height:31px;border-radius:6px;margin-bottom:14px}.dash-sidebar button{width:34px;height:34px;border:0;border-radius:8px;background:transparent;color:#60748f}.dash-sidebar button.active{background:linear-gradient(135deg,rgba(20,116,255,.3),rgba(35,229,234,.12));color:#68eaf1;border:1px solid rgba(61,208,241,.2)}.dash-content{padding:23px 24px;width:100%}.dash-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.dash-title small{font-size:8px;letter-spacing:.15em;color:#58718f}.dash-title h3{font-size:18px;margin:3px 0}.dash-title>span{border:1px solid var(--line);padding:6px 10px;border-radius:8px;color:#7e91aa;font-size:9px}.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.metric-row article{background:linear-gradient(180deg,rgba(13,29,54,.9),rgba(9,20,39,.75));border:1px solid var(--line);border-radius:11px;padding:12px;position:relative;min-height:75px}.metric-row small{display:block;color:#627792;font-size:7px;letter-spacing:.1em}.metric-row b{font-size:18px}.mini-chart{position:absolute;bottom:12px;right:10px;width:35px;height:16px;background:linear-gradient(135deg,transparent 44%,#1f87ff 45%,#2bdde8 52%,transparent 54%)}.mini-chart.up{transform:skewY(-10deg)}.mini-chart.short{width:27px}.chart-card{margin-top:12px;height:168px;border:1px solid var(--line);border-radius:12px;background:rgba(7,18,36,.78);padding:12px 14px}.chart-head{display:flex;justify-content:space-between;color:#9eb0c9;font-size:10px}.chart-head small{color:#57708f}.chart-card svg{width:100%;height:125px;margin-top:4px;overflow:visible}.chart-card .grid-path{stroke:rgba(121,167,228,.08);stroke-width:1}.chart-card .line{fill:none;stroke:url(#lineGrad);stroke-width:3}.chart-card .area{fill:url(#lineGrad);opacity:.08}.task-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.task-row>div{display:flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:9px;padding:9px;background:rgba(9,22,42,.65)}.task-icon{display:grid;place-items:center;width:26px;height:26px;border-radius:8px;background:rgba(23,118,255,.15);color:#448fff;font-size:11px}.task-icon.cyan{color:#29e0e4;background:rgba(31,223,229,.11)}.task-row p{margin:0;line-height:1.1}.task-row strong,.task-row small{display:block}.task-row strong{font-size:8px}.task-row small{font-size:7px;color:#61748e;margin-top:4px}.float-card{position:absolute;z-index:3;display:flex;gap:10px;align-items:center;padding:11px 14px;border-radius:12px;border:1px solid rgba(48,196,246,.18);background:rgba(6,17,35,.88);backdrop-filter:blur(12px);box-shadow:0 20px 40px rgba(0,0,0,.28);font-size:10px}.float-card>span{font-size:18px;color:#29e3e8}.float-card small,.float-card strong{display:block}.float-card small{font-size:7px;color:#59728f;letter-spacing:.1em}.float-card strong{margin-top:3px}.card-one{left:-14px;top:92px}.card-two{right:-24px;bottom:44px}.trusted{position:relative;z-index:3;margin-top:95px;padding-top:25px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;color:#596b84;font-size:11px;text-transform:uppercase;letter-spacing:.11em}.trusted-list{display:flex;align-items:center;gap:25px}.trusted-list b{font-size:11px;color:#7b8fa8}.trusted-list i{width:3px;height:3px;background:#1bbfcb;border-radius:50%}
+.section-heading{display:flex;justify-content:space-between;gap:60px;align-items:end;margin-bottom:56px}.section-heading h2,.showcase-heading h2,.systems h2,.auto-copy h2,.contact h2{font-size:clamp(40px,5vw,66px);letter-spacing:-.045em;line-height:1.02;margin:12px 0 0}.section-heading p{max-width:420px;color:#8497b2;line-height:1.7;margin:0}.services{background:linear-gradient(180deg,#030713,#060d1c 50%,#030713)}.service-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.service-card{min-height:470px;position:relative;border:1px solid var(--line);border-radius:16px;padding:27px 24px;background:linear-gradient(180deg,rgba(13,27,49,.78),rgba(5,12,27,.88));overflow:hidden;transition:.35s}.service-card:before{content:"";position:absolute;inset:auto -40px -90px;height:210px;background:radial-gradient(circle,rgba(16,109,255,.11),transparent 67%);opacity:0;transition:.35s}.service-card:hover{transform:translateY(-7px);border-color:rgba(43,190,255,.28)}.service-card:hover:before{opacity:1}.service-card .number{position:absolute;right:22px;top:20px;color:#31445e;font-weight:800;font-size:11px}.service-icon{width:58px;height:58px;border:1px solid rgba(45,206,248,.2);border-radius:13px;display:grid;place-items:center;font-size:25px;color:#38dce8;background:rgba(10,121,186,.08);box-shadow:inset 0 0 30px rgba(22,123,255,.08);margin-top:43px}.service-card h3{font-size:27px;margin:24px 0 12px}.service-card p{color:#8294ad;line-height:1.65;font-size:14px}.service-card ul{list-style:none;padding:0;margin:25px 0 35px;border-top:1px solid var(--line)}.service-card li{font-size:12px;color:#a4b3c8;padding:10px 0;border-bottom:1px solid var(--line)}.service-card li:before{content:"+";color:#24dde5;margin-right:8px}.service-card>a{position:absolute;left:24px;bottom:24px;font-size:12px;font-weight:800;color:#cfdded}.service-card>a span{color:#27dfe4;margin-left:7px}.featured-card{background:linear-gradient(150deg,rgba(16,80,158,.19),rgba(5,15,30,.92));border-color:rgba(47,210,237,.23)}.badge{position:absolute;top:21px;left:24px;border-radius:999px;background:rgba(37,226,233,.08);border:1px solid rgba(37,226,233,.2);font-size:8px;letter-spacing:.12em;color:#4ee9ed;padding:6px 9px}
+.systems{position:relative;background:radial-gradient(circle at 20% 40%,rgba(17,104,255,.1),transparent 33%)}.systems-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:92px;align-items:center}.systems-copy>p,.auto-copy>p{font-size:16px;line-height:1.7;color:#879ab3;max-width:520px}.system-features{margin-top:34px;display:grid;gap:12px;max-width:500px}.system-features>div{display:flex;align-items:center;gap:13px;border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:rgba(8,20,39,.6)}.system-features span{font-size:20px;color:#25dae4;width:32px}.system-features p{margin:0}.system-features strong,.system-features small{display:block}.system-features strong{font-size:13px}.system-features small{font-size:11px;color:#6e839f;margin-top:4px}.pricing-stack{display:grid;gap:10px}.price-card{display:grid;grid-template-columns:1.1fr auto;column-gap:20px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:19px 22px;background:linear-gradient(135deg,rgba(12,27,50,.88),rgba(6,14,29,.86));position:relative;overflow:hidden}.price-card>div span{font-size:8px;letter-spacing:.13em;color:#4adfe9}.price-card h3{margin:5px 0 0;font-size:18px}.price-card>strong{font-size:20px;text-align:right}.price-card>small{grid-column:2;font-size:9px;color:#5d718c;text-align:right}.price-card p{margin:13px 0 0;font-size:11px;color:#7488a3}.price-card a{grid-column:2;grid-row:3;font-size:11px;text-align:right;color:#70e7ee;font-weight:800}.price-card.recommended{border-color:rgba(38,213,230,.33);box-shadow:0 0 55px rgba(13,115,255,.08)}.price-card.recommended:after{content:"";position:absolute;right:-55px;top:-65px;width:160px;height:160px;background:radial-gradient(circle,rgba(35,231,232,.15),transparent 68%)}.custom-note{display:flex;align-items:center;gap:13px;color:#6f839e;font-size:11px;padding:12px 15px;margin:0}.custom-note span{font-size:20px;color:#2bdde5}.custom-note strong{color:#b6c5d7}
+.automation{background:linear-gradient(180deg,#030713,#06101f 48%,#030713)}.auto-grid{display:grid;grid-template-columns:1fr .95fr;gap:110px;align-items:center}.auto-visual{position:relative;min-height:640px;display:grid;place-items:center}.auto-visual:before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(18,105,255,.14),transparent 68%);border:1px solid rgba(44,183,255,.09)}.phone{width:285px;height:570px;border:8px solid #0f1e33;background:#06111f;border-radius:39px;position:relative;z-index:3;box-shadow:0 40px 80px rgba(0,0,0,.5),0 0 55px rgba(15,120,255,.12);overflow:hidden}.phone:before{content:"";position:absolute;top:6px;left:50%;transform:translateX(-50%);width:82px;height:19px;background:#0f1e33;border-radius:0 0 13px 13px;z-index:3}.phone-top{display:flex;justify-content:space-between;padding:12px 18px 5px;color:#8fa4bd;font-size:9px}.phone-header{display:flex;align-items:center;gap:9px;padding:18px 14px 14px;border-bottom:1px solid var(--line)}.phone-header img{width:33px;height:33px;border-radius:50%}.phone-header div{flex:1}.phone-header b,.phone-header small{display:block}.phone-header b{font-size:12px}.phone-header small{font-size:8px;color:#6c819d}.phone-header>span{font-size:12px;color:#536a86}.messages{padding:22px 12px;display:flex;flex-direction:column;gap:10px}.bubble{max-width:82%;padding:10px 11px;border-radius:12px;font-size:10px;line-height:1.45}.bubble.bot{align-self:flex-start;background:#13253b;color:#c5d2e2;border-bottom-left-radius:3px}.bubble.user{align-self:flex-end;background:linear-gradient(135deg,#0c68da,#0b9bb4);border-bottom-right-radius:3px}.typing{display:flex;gap:4px;background:#13253b;padding:10px;width:44px;border-radius:11px}.typing i{width:4px;height:4px;border-radius:50%;background:#7290aa}.input-pill{position:absolute;left:12px;right:12px;bottom:16px;background:#102136;border:1px solid var(--line);border-radius:999px;padding:10px 12px;display:flex;align-items:center;justify-content:space-between;color:#607994;font-size:9px}.input-pill b{display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:linear-gradient(135deg,#1975ff,#25dce4);color:#fff}.node{position:absolute;z-index:4;border:1px solid rgba(44,199,242,.2);background:rgba(7,18,35,.88);backdrop-filter:blur(12px);padding:11px 14px;border-radius:12px;box-shadow:0 16px 40px rgba(0,0,0,.25);font-size:10px;display:flex;align-items:center;gap:9px}.node i{width:25px;height:25px;border-radius:8px;background:rgba(32,214,230,.1);display:grid;place-items:center;font-style:normal;color:#36e7e6;font-size:8px}.node-a{left:15px;top:95px}.node-b{right:5px;top:125px}.node-c{right:0;bottom:100px}.connectors{position:absolute;inset:0;width:100%;height:100%;z-index:2}.connectors path{stroke:#167de3;stroke-width:1;fill:none;opacity:.32;stroke-dasharray:5 8}.auto-list{margin-top:35px}.auto-list>div{display:flex;gap:16px;padding:17px 0;border-top:1px solid var(--line)}.auto-list>div:last-child{border-bottom:1px solid var(--line)}.auto-list>b{}.auto-list b{font-size:10px;color:#31d9e1;margin-top:3px}.auto-list p{margin:0}.auto-list strong,.auto-list small{display:block}.auto-list strong{font-size:13px}.auto-list small{font-size:11px;line-height:1.5;color:#6f849f;margin-top:5px}.text-link{display:inline-flex;gap:12px;margin-top:27px;font-size:13px;font-weight:800}.text-link span{color:#2de0e4}
+.process{position:relative}.process-track{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);margin-top:75px}.process-track article{position:relative;padding:34px 28px 0 0}.process-track article>span{font-size:10px;color:#33dce4}.process-track i{position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:#0b6eee;box-shadow:0 0 20px rgba(37,223,230,.8)}.process-track h3{font-size:17px;margin:16px 0 9px}.process-track p{color:#70849f;line-height:1.6;font-size:12px;max-width:220px}
+.showcase{background:#050b17}.showcase-heading{max-width:780px;margin-bottom:52px}.showcase-heading p{color:#8295ae;max-width:560px;line-height:1.65}.showcase-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.poster{margin:0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#07101f;position:relative;min-height:430px}.poster img{width:100%;height:100%;object-fit:cover;transition:.5s}.poster:hover img{transform:scale(1.025)}.poster.wide{min-height:315px}.poster.wide img{object-position:left center}.poster figcaption{position:absolute;inset:auto 0 0;padding:45px 22px 20px;background:linear-gradient(transparent,rgba(2,7,15,.93));display:flex;justify-content:space-between;align-items:end}.poster figcaption span{color:#34dce4;font-size:10px}.poster figcaption b{font-size:12px}
+.contact{position:relative}.contact-card{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr .86fr;gap:90px;padding:65px;border:1px solid rgba(46,199,242,.2);border-radius:24px;background:linear-gradient(145deg,rgba(10,29,56,.92),rgba(4,11,25,.95));box-shadow:var(--shadow)}.contact-glow{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(17,117,255,.14),transparent 67%);left:-220px;bottom:-250px}.contact-copy,.contact-form{position:relative;z-index:2}.contact-copy p{color:#8397b1;line-height:1.65;max-width:420px}.contact-form{display:grid;gap:14px}.contact-form label{display:grid;gap:7px;font-size:10px;font-weight:800;color:#9bb0c8;letter-spacing:.04em}.contact-form input,.contact-form select,.contact-form textarea{width:100%;border:1px solid var(--line);background:rgba(3,11,24,.78);border-radius:10px;color:#edf6ff;padding:13px 14px;outline:none;resize:vertical}.contact-form select{color:#b9c8da}.contact-form input:focus,.contact-form select:focus,.contact-form textarea:focus{border-color:rgba(45,221,230,.45);box-shadow:0 0 0 3px rgba(29,159,226,.07)}.contact-form .submit{border:0;cursor:pointer;margin-top:4px}.contact-form>small{color:#546a86;font-size:9px;text-align:center}
+footer{border-top:1px solid var(--line);padding:65px 0 24px;background:#02060f}.footer-grid{display:grid;grid-template-columns:1.5fr .6fr .6fr .9fr;gap:55px}.footer-brand{display:flex;flex-direction:column;align-items:flex-start}.footer-brand img{display:block;width:168px;height:auto;margin:0 0 14px 0}.footer-brand p{font-size:12px;color:#6b7f99;margin:0;line-height:1.5;max-width:230px}.footer-grid>div:not(.footer-brand){display:flex;flex-direction:column;gap:10px}.footer-grid>div>span{font-size:10px;letter-spacing:.12em;color:#4b617c;text-transform:uppercase;margin-bottom:5px}.footer-grid a{font-size:12px;color:#95a8bf}.footer-grid a:hover{color:#fff}.footer-cta a{display:flex;align-items:center;justify-content:space-between;padding:14px;border:1px solid var(--line);border-radius:9px}.footer-cta b{color:#2de1e6}.footer-bottom{display:flex;justify-content:space-between;border-top:1px solid rgba(90,130,181,.08);padding-top:20px;margin-top:50px;color:#425773;font-size:9px;letter-spacing:.06em}.wa-float{position:fixed;right:22px;bottom:22px;z-index:70;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,#1288ff,#20d9df);box-shadow:0 12px 32px rgba(18,145,222,.32);transition:opacity .25s ease,transform .25s ease}.wa-float:hover{transform:translateY(-4px) scale(1.03)}.wa-float.is-hidden{opacity:0;pointer-events:none;transform:translateY(12px) scale(.92)}.wa-float svg{width:26px;fill:white}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}.reveal.visible{opacity:1;transform:none}.delay-1{transition-delay:.08s}.delay-2{transition-delay:.16s}.delay-3{transition-delay:.24s}
+@media (max-width:1050px){.hero-grid{grid-template-columns:1fr;gap:55px}.hero{padding-top:150px}.hero-copy{max-width:780px}.hero-visual{min-height:560px}.trusted{margin-top:40px}.service-grid{grid-template-columns:1fr 1fr}.systems-grid,.auto-grid{grid-template-columns:1fr;gap:60px}.systems-copy{max-width:720px}.pricing-stack{max-width:760px}.auto-copy{order:-1}.auto-visual{min-height:600px}.contact-card{grid-template-columns:1fr;gap:45px}.footer-grid{grid-template-columns:1.3fr 1fr 1fr}.footer-cta{grid-column:1/-1}.section-heading{align-items:start}.process-track{grid-template-columns:1fr 1fr;row-gap:35px}.process-track article:nth-child(3){border-top:1px solid var(--line)}}
+@media (max-width:760px){.container{width:min(100% - 30px,1180px)}.section-pad{padding:82px 0}.site-header{height:68px}.menu-btn{display:block;z-index:82}.nav{position:fixed;inset:0;background:rgba(3,7,19,.96);backdrop-filter:blur(20px);display:flex;flex-direction:column;justify-content:center;gap:26px;font-size:19px;transform:translateX(100%);transition:.3s}.nav.open{transform:none}.menu-btn.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}.menu-btn.active span:nth-child(2){opacity:0}.menu-btn.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}.hero{padding-top:120px;min-height:auto}.hero-grid{gap:30px}.hero h1{font-size:clamp(47px,14vw,68px)}.hero-text{font-size:15px}.hero-actions{flex-direction:column;align-items:stretch}.hero-points{gap:18px;justify-content:space-between}.hero-visual{min-height:430px;margin-inline:-30px;transform:scale(.8)}.dashboard-shell{width:640px}.float-card{display:none}.trusted{flex-direction:column;align-items:flex-start;gap:18px;margin-top:-20px}.trusted-list{flex-wrap:wrap;gap:14px}.section-heading{display:block}.section-heading p{margin-top:22px}.service-grid{grid-template-columns:1fr}.service-card{min-height:410px}.systems h2,.auto-copy h2,.section-heading h2,.showcase-heading h2,.contact h2{font-size:42px}.systems-grid,.auto-grid{gap:45px}.price-card{grid-template-columns:1fr auto}.auto-visual{transform:scale(.88);margin:-35px -25px;min-height:560px}.process-track{grid-template-columns:1fr;border-top:0;margin-top:30px}.process-track article,.process-track article:nth-child(3){border-top:1px solid var(--line);padding:28px 0}.process-track i{top:-5px}.showcase-grid{grid-template-columns:1fr}.poster,.poster.wide{min-height:330px}.poster.wide img{object-position:left center}.contact-card{padding:34px 22px}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}.footer-brand img{width:150px}.footer-cta{grid-column:1/-1}.cursor-glow{display:none}}
+@media (max-width:460px){.hero-visual{transform:scale(.63);min-height:345px;margin:-10px -100px}.trusted{margin-top:-15px}.hero-points span{font-size:10px}.systems h2,.auto-copy h2,.section-heading h2,.showcase-heading h2,.contact h2{font-size:36px}.price-card{grid-template-columns:1fr}.price-card>strong,.price-card>small,.price-card a{grid-column:1;text-align:left}.price-card>strong{margin-top:13px}.price-card a{margin-top:10px}.auto-visual{transform:scale(.72);margin:-95px -90px;min-height:500px}.footer-grid{grid-template-columns:1fr}.footer-brand,.footer-cta{grid-column:auto}.footer-bottom{flex-direction:column;gap:8px}.wa-float{width:46px;height:46px;right:16px;bottom:16px}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+
+
+/* V4 — ajustes responsive para móviles */
+@media (max-width:760px){
+  html,body{max-width:100%;overflow-x:hidden}
+  .container{width:calc(100% - 28px);max-width:100%}
+  .hero{padding-top:105px}
+  .hero h1{font-size:clamp(40px,12.5vw,58px);line-height:.98;overflow-wrap:anywhere}
+  .hero-text{max-width:100%}
+  .hero-points{width:100%;gap:10px}
+  .hero-points div{min-width:0;flex:1}
+
+  /* El panel ya no usa un ancho fijo de escritorio fuera de la pantalla. */
+  .hero-visual{width:100%;min-height:360px;margin:10px 0 0;transform:none;overflow:visible}
+  .halo{width:min(92vw,430px);height:min(92vw,430px)}
+  .dashboard-shell{width:100%;max-width:620px;transform:none;border-radius:14px}
+  .dash-body{min-height:310px}
+  .dash-sidebar{width:50px;flex:0 0 50px}
+  .dash-content{min-width:0;padding:17px 14px}
+  .metric-row{gap:7px}
+  .metric-row article{padding:9px;min-width:0}
+  .metric-row b{font-size:15px}
+  .chart-card{height:145px}
+  .chart-card svg{height:105px}
+  .task-row{gap:7px}
+
+  .section-heading,.systems-grid,.auto-grid,.contact-card,.showcase-grid{min-width:0}
+  .service-card,.price-card,.poster,.contact-card{max-width:100%}
+  .price-card{padding:18px 17px}
+
+  /* Automatización: conservar el mockup centrado sin recortar los laterales. */
+  .auto-visual{width:100%;min-height:555px;margin:0;transform:none;overflow:visible}
+  .auto-visual:before{width:min(90vw,470px);height:min(90vw,470px)}
+  .phone{width:min(285px,78vw);height:555px}
+  .node{font-size:9px;padding:9px 10px}
+  .node-a{left:0}.node-b{right:0}.node-c{right:0}
+
+  .poster img{max-width:100%}
+  .contact-card{padding:30px 18px}
+  .contact-form input,.contact-form select,.contact-form textarea{min-width:0}
+}
+
+@media (max-width:460px){
+  .container{width:calc(100% - 24px)}
+  .section-pad{padding:68px 0}
+  .brand{gap:9px;letter-spacing:.13em}
+  .brand img{width:31px;height:31px}
+  .hero h1{font-size:clamp(38px,12vw,50px)}
+  .hero-points{gap:6px}
+  .hero-points strong{font-size:9px}
+  .hero-points span{font-size:9px;letter-spacing:.04em}
+  .hero-visual{min-height:315px;margin-top:5px;transform:none}
+  .dashboard-shell{width:100%}
+  .window-bar{padding:0 10px}
+  .window-bar>span{display:none}
+  .dash-sidebar{width:42px;flex-basis:42px}
+  .dash-sidebar button{width:30px;height:30px}
+  .dash-content{padding:14px 10px}
+  .metric-row article:nth-child(3){display:none}
+  .metric-row{grid-template-columns:1fr 1fr}
+  .task-row{grid-template-columns:1fr}
+  .task-row>div:nth-child(2){display:none}
+  .chart-card{height:130px}
+  .chart-card svg{height:90px}
+  .systems h2,.auto-copy h2,.section-heading h2,.showcase-heading h2,.contact h2{font-size:34px}
+  .price-card{grid-template-columns:1fr}
+  .price-card>strong,.price-card>small,.price-card a{grid-column:1;text-align:left}
+  .price-card>strong{margin-top:13px}.price-card a{margin-top:10px}
+  .auto-visual{min-height:520px;margin:0;transform:none}
+  .phone{width:min(270px,76vw);height:520px}
+  .node-a{left:-2px;top:88px}.node-b{right:-2px;top:122px}.node-c{right:-2px;bottom:90px}
+  .poster,.poster.wide{min-height:280px}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-brand,.footer-cta{grid-column:auto}
+}
+
+
+/* Portafolio empresarial y tarjetas de equipo (fotografías sustituibles) */
+section[id]{scroll-margin-top:88px}
+.portfolio{background:radial-gradient(circle at 75% 7%,rgba(20,116,255,.09),transparent 35%),#040918}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.portfolio-card{display:flex;flex-direction:column;min-width:0;background:linear-gradient(165deg,rgba(12,27,50,.9),rgba(5,11,24,.94));border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform .3s,border-color .3s}
+.portfolio-card:hover{transform:translateY(-6px);border-color:rgba(44,219,234,.37)}
+.portfolio-visual{height:250px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:18px;border-bottom:1px solid rgba(130,177,241,.15)}
+.preview-top,.preview-foot{display:flex;align-items:center;justify-content:space-between;gap:6px;color:#a1c2d9;font-size:9px;font-weight:800;letter-spacing:.11em;position:relative;z-index:2}
+.preview-top>span:last-child{font-size:17px;color:#36d8e8}
+.preview-foot{font-size:8px;color:#83a6be;letter-spacing:.07em;flex-wrap:wrap}
+.portfolio-vortex{background:radial-gradient(circle at 50% 49%,rgba(112,52,214,.43),transparent 59%),linear-gradient(135deg,#080c21,#121027 58%,#050919)}
+.preview-center{display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;position:relative;z-index:1}
+.preview-center:before,.preview-center:after{content:"";position:absolute;width:160px;height:160px;border:1px solid rgba(166,102,255,.28);border-radius:50%;transform:rotate(32deg) scaleX(.7);z-index:-1}
+.preview-center:after{transform:rotate(-43deg) scaleX(.7)}
+.preview-orbit{font-size:27px;color:#ae90ff;line-height:1}
+.preview-center strong{letter-spacing:.2em;font-weight:900;font-size:clamp(28px,3vw,40px);text-shadow:0 0 30px rgba(173,92,255,.48)}
+.preview-center small{font-size:9px;letter-spacing:.18em;color:#aaafca;margin-top:6px}
+.portfolio-stock{background:radial-gradient(circle at 48% 110%,rgba(0,182,234,.15),transparent 75%),linear-gradient(145deg,#091a2c,#071021)}
+.stock-preview{width:80%;margin:auto;max-width:290px;background:rgba(3,13,28,.92);border:1px solid rgba(52,210,247,.27);border-radius:11px;padding:13px 15px;box-shadow:0 18px 42px rgba(0,0,0,.3);transform:rotate(-2deg)}
+.stock-preview-head{display:flex;justify-content:space-between;gap:6px;font-size:11px;color:#bce7ed}
+.stock-preview-head span{font-size:8px;color:#48e7cd}
+.stock-bars{display:flex;gap:8px;height:56px;align-items:end;border-bottom:1px solid rgba(138,176,232,.2);margin:13px 0}
+.stock-bars i{display:block;flex:1;border-radius:4px 4px 0 0;background:linear-gradient(180deg,#26e6ec,#1168c4)}
+.stock-bars i:nth-child(1){height:52%}.stock-bars i:nth-child(2){height:90%}.stock-bars i:nth-child(3){height:67%}.stock-bars i:nth-child(4){height:82%}
+.stock-rows{display:grid;gap:6px}.stock-rows span{height:6px;border-radius:5px;background:linear-gradient(90deg,#3c5774 22%,rgba(77,109,144,.19) 22%)}
+.portfolio-veli{background:radial-gradient(circle at 55% 50%,rgba(21,122,241,.3),transparent 60%),linear-gradient(135deg,#041020,#091b31)}
+.veli-preview{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:auto;width:84%;max-width:290px}
+.veli-greeting,.veli-reply{background:#123450;border:1px solid rgba(60,209,237,.17);border-radius:14px 14px 14px 3px;padding:11px 15px;color:#cce5ed;font-size:12px}
+.veli-greeting{font-weight:800}.veli-greeting b{color:#2ee5f3}
+.veli-reply{margin-left:18px;background:#0d2439;color:#95aec9}
+.veli-typing{display:flex;gap:4px;margin-left:18px;background:#14304b;border-radius:99px;padding:11px 14px}
+.veli-typing i{width:5px;height:5px;border-radius:50%;background:#32dce9}
+.portfolio-body{display:flex;flex:1;flex-direction:column;padding:24px}
+.project-type,.member-area{font-size:9px;font-weight:800;letter-spacing:.12em;color:#4fe2e7}
+.portfolio-body h3{font-size:25px;margin:12px 0 9px}
+.portfolio-body p{color:#95a6bc;font-size:13px;line-height:1.7;margin:0 0 23px;flex:1}
+.portfolio-body a{display:inline-flex;gap:12px;align-items:center;align-self:flex-start;font-size:12px;font-weight:800;padding-bottom:5px;border-bottom:1px solid rgba(50,217,234,.3)}
+.portfolio-body a span{color:#3adce5}
+.team{background:linear-gradient(180deg,#030713,#071121 45%,#030713)}
+.team-intro{border-left:2px solid #20d6e9;padding-left:21px;max-width:770px;margin:-10px 0 38px}
+.team-intro p{margin:0;color:#afc1d7;line-height:1.7;font-size:15px}
+.team-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.member-card{display:flex;flex-direction:column;align-items:center;min-width:0;text-align:center;padding:30px 19px 25px;background:linear-gradient(170deg,rgba(15,36,65,.88),rgba(6,15,31,.94));border:1px solid rgba(65,165,240,.18);border-radius:19px;transition:transform .3s,border-color .3s}
+.member-card:hover{transform:translateY(-5px);border-color:rgba(38,220,237,.36)}
+.member-avatar{width:106px;height:106px;flex:0 0 106px;border-radius:50%;border:1px solid rgba(57,213,242,.4);background:radial-gradient(circle at 28% 24%,rgba(40,146,239,.35),transparent 65%),linear-gradient(135deg,#102744,#072039);box-shadow:0 0 0 7px rgba(40,181,239,.045),0 14px 35px rgba(0,0,0,.25);display:grid;place-items:center;overflow:hidden;margin-bottom:25px}
+.member-avatar span{color:#60ebef;letter-spacing:.04em;font-size:29px;font-weight:900}
+.member-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+.member-card .member-area{min-height:22px;line-height:1.5;font-size:8px}
+.member-card h3{font-size:18px;line-height:1.24;min-height:44px;margin:8px 0 5px}
+.member-role{font-weight:800;font-size:11px;color:#d2e3f5;margin:2px 0 12px}
+.member-card>p:last-child{font-size:12px;color:#8b9fb9;line-height:1.6;margin:0}
+.team-footnote{margin:30px 0 0;color:#899fb6;text-align:center;font-size:13px}
+@media(max-width:1050px){
+  .portfolio-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .nav{gap:17px;font-size:13px}
+}
+@media(max-width:760px){
+  .portfolio-grid{grid-template-columns:1fr}
+  .portfolio-visual{height:240px}
+  .team-grid{gap:12px}
+  .member-card{padding:25px 12px}
+  .member-avatar{width:92px;height:92px;flex-basis:92px}
+  .member-avatar span{font-size:26px}
+  .team-intro{margin-top:0}
+}
+@media(max-width:440px){
+  .team-grid{grid-template-columns:1fr}
+  .member-card h3{min-height:0}
+  .member-card .member-area{min-height:0}
+}
+
+
+/* Catálogo octubre 2026: precios fijos, 'desde', mensualidades y presupuestos personalizados */
+.catalog{background:radial-gradient(circle at 6% 3%,rgba(16,116,255,.095),transparent 36%),linear-gradient(180deg,#030713,#071120 48%,#030713)}
+.catalog-guide{display:flex;flex-wrap:wrap;gap:10px 20px;padding:17px 22px;border:1px solid rgba(55,172,220,.16);border-radius:15px;background:rgba(8,24,45,.65);margin:-13px 0 42px}
+.catalog-guide span{flex:1 1 250px;color:#96adc7;font-size:12px;line-height:1.5}
+.catalog-guide b{color:#c4eff5}
+.catalog-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;align-items:start}
+.catalog-column{display:flex;flex-direction:column;gap:11px;min-width:0}
+.catalog-column-head{display:flex;align-items:center;gap:16px;margin-bottom:12px;padding-bottom:21px;border-bottom:1px solid var(--line)}
+.catalog-column-head h3{font-size:clamp(21px,2.8vw,29px);margin:5px 0 0}
+.catalog-division-icon{flex:none;width:54px;height:54px;border:1px solid rgba(53,201,236,.2);border-radius:14px;display:grid;place-items:center;color:#39e5eb;background:rgba(22,115,180,.14);font-size:25px}
+.catalog-group{background:linear-gradient(150deg,rgba(11,27,48,.94),rgba(5,15,31,.9));border:1px solid var(--line);border-radius:15px;overflow:hidden;scroll-margin-top:90px}
+.catalog-group[open]{border-color:rgba(48,202,232,.32)}
+.catalog-group>summary{list-style:none;cursor:pointer;padding:19px 20px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:9px 12px}
+.catalog-group>summary::-webkit-details-marker{display:none}
+.catalog-group>summary:focus-visible,.project-details>summary:focus-visible,.portfolio-filter:focus-visible{outline:2px solid #27dbed;outline-offset:-3px}
+.catalog-group-title{font-size:17px;font-weight:850;color:#e7f6ff}
+.catalog-group summary small{grid-column:1/-1;color:#8199b5;line-height:1.5;font-size:12px}
+.catalog-expand{font-size:10px;color:#39deea;white-space:nowrap;font-weight:750}
+.catalog-expand>span{font-size:16px;display:inline-block;transition:transform .2s;margin-left:4px}
+.catalog-group[open] .catalog-expand>span{transform:rotate(45deg)}
+.catalog-content{padding:0 18px 20px;border-top:1px solid var(--line)}
+.catalog-plans{display:grid;gap:10px;padding:16px 0}
+.catalog-plan{padding:15px;border:1px solid rgba(88,153,219,.15);background:rgba(5,16,34,.64);border-radius:11px}
+.catalog-plan-heading{display:flex;align-items:start;justify-content:space-between;gap:12px}
+.catalog-plan h4{font-size:14px;line-height:1.4;margin:0;color:#dcecff}
+.catalog-price{font-size:13px;color:#42e5e6;text-align:right;font-weight:850;line-height:1.4;min-width:106px}
+.catalog-price small{display:block;color:#a0b5cb;font-size:10px;line-height:1.6;font-weight:650}
+.catalog-plan ul{padding:0;margin:12px 0 0;list-style:none;display:grid;gap:7px}
+.catalog-plan li{color:#8ea3be;font-size:12px;line-height:1.5;padding-left:14px;position:relative}
+.catalog-plan li:before{content:"+";color:#37d9e2;position:absolute;left:0}
+.catalog-other{list-style:none;padding:17px 0 5px;margin:0}
+.catalog-other li{font-size:13px;color:#9eafc6;padding:7px 0;border-bottom:1px solid rgba(145,183,239,.09)}
+.catalog-note{color:#8ba4bc;line-height:1.65;font-size:11px;margin:2px 0 15px}
+.catalog-cta{display:inline-flex;gap:11px;border-bottom:1px solid rgba(44,219,232,.25);color:#d3e5f4;padding-bottom:7px;font-size:12px;font-weight:800}
+.catalog-cta span{color:#25e0e8}
+.catalog-footer{margin:32px auto 0;max-width:990px;text-align:center;font-size:12px;line-height:1.8;color:#8299b4}
+/* Portafolio: filtros, portadas ilustrativas y detalles de casos */
+.portfolio-filters{display:flex;gap:9px;flex-wrap:wrap;margin:-15px 0 29px}
+.portfolio-filter{border:1px solid rgba(66,156,222,.24);background:rgba(7,20,39,.7);color:#a8bacf;border-radius:100px;cursor:pointer;padding:10px 15px;font-size:12px;font-weight:800;transition:.2s}
+.portfolio-filter:hover{border-color:rgba(39,228,232,.4);color:#fff}
+.portfolio-filter.is-active{border-color:rgba(44,217,229,.67);color:#dcfaff;background:rgba(29,131,196,.22)}
+.portfolio-filter span{font-size:10px;opacity:.7;margin-left:5px}
+.portfolio-card[hidden]{display:none!important}
+.portfolio-art{isolation:isolate}
+.portfolio-art:before,.portfolio-art:after{content:"";position:absolute;border-radius:50%;pointer-events:none;z-index:-1}
+.portfolio-art:before{width:220px;height:220px;left:calc(50% - 110px);top:8px;border:1px solid rgba(126,192,250,.16);box-shadow:0 0 60px rgba(46,133,244,.18),inset 0 0 50px rgba(14,118,220,.12)}
+.portfolio-art:after{width:170px;height:170px;left:calc(50% - 85px);top:32px;border:1px dashed rgba(100,203,228,.16)}
+.portfolio-art.art-web{background:radial-gradient(circle at 50% 48%,rgba(29,124,214,.31),transparent 60%),linear-gradient(135deg,#091933,#051023)}
+.portfolio-art.art-systems{background:radial-gradient(circle at 46% 50%,rgba(11,155,214,.26),transparent 60%),linear-gradient(130deg,#061e2c,#070f24)}
+.portfolio-art.art-design{background:radial-gradient(circle at 49% 50%,rgba(24,153,224,.23),transparent 60%),linear-gradient(130deg,#14112f,#07162c)}
+.portfolio-art.art-ai{background:radial-gradient(circle at 50% 50%,rgba(40,202,218,.21),transparent 60%),linear-gradient(130deg,#061a2e,#081329)}
+.portfolio-art.art-game{background:radial-gradient(circle at 50% 50%,rgba(96,77,187,.3),transparent 60%),linear-gradient(130deg,#121324,#050914)}
+.art-center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;text-align:center;min-width:0;position:relative}
+.art-graphic{font-size:28px;line-height:1;color:#41dfef;text-shadow:0 0 22px rgba(68,199,235,.3)}
+.art-center strong{font-size:clamp(20px,2.5vw,29px);font-weight:900;letter-spacing:.08em;color:#e5f6ff;max-width:100%;overflow-wrap:anywhere;text-shadow:0 4px 30px rgba(34,160,241,.3)}
+.art-center small{font-size:10px;letter-spacing:.12em;color:#90b2cf;text-transform:uppercase}
+.portfolio-body{gap:0}
+.portfolio-body h3{margin-top:12px}
+.portfolio-body>p{flex:0 1 auto;margin:0 0 19px;min-height:90px}
+.project-status{font-style:normal;color:#f0bd81}
+.project-details{margin-top:auto;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.project-details>summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:9px;color:#cbeaf5;font-size:12px;font-weight:800;padding:14px 0;list-style:none}
+.project-details>summary::-webkit-details-marker{display:none}
+.project-details>summary span{color:#35e4e8;font-size:18px}
+.project-details[open]>summary span{transform:rotate(45deg)}
+.project-details-content{padding:2px 0 17px}
+.project-details-content strong{font-size:11px;color:#46e0e9}
+.project-details-content p{margin:5px 0 12px!important;min-height:0!important;color:#a0b1c8;font-size:12px;line-height:1.6}
+.portfolio-action{margin-top:17px}
+.portfolio-action a{align-self:flex-start}
+.portfolio-visual-note{text-align:center;max-width:840px;margin:30px auto 0;color:#70869e;font-size:11px;line-height:1.7}
+@media(max-width:1050px){
+.catalog-columns{gap:15px}
+.catalog-group>summary{padding:16px 13px}
+.catalog-content{padding-inline:12px}
+}
+@media(max-width:760px){
+.catalog-columns{grid-template-columns:1fr;gap:45px}
+.catalog-guide{margin-bottom:30px;padding:15px}
+.catalog-column-head{margin-bottom:5px}
+.portfolio-filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding:0 1px 9px}
+.portfolio-filter{flex:none}
+.portfolio-body>p{min-height:0}
+}
+@media(max-width:460px){
+.catalog-group>summary{grid-template-columns:1fr;gap:7px}
+.catalog-expand{order:3}
+.catalog-group summary small{grid-column:1}
+.catalog-plan-heading{flex-direction:column;gap:7px}
+.catalog-price{text-align:left}
+}
+
+/* Prestaciones complementarias (incluyen desarrollo y marketing) */
+.catalog-extras{margin-top:28px;padding:22px;border:1px solid rgba(60,169,226,.16);background:rgba(7,20,39,.52);border-radius:18px;display:grid;grid-template-columns:.85fr 1.15fr;gap:24px;align-items:start}
+.catalog-extras h3{font-size:25px;line-height:1.2;margin:10px 0 0;letter-spacing:-.03em}
+.catalog-extras>.catalog-group{min-width:0}
+@media(max-width:760px){.catalog-extras{grid-template-columns:1fr;padding:15px;gap:15px}}
+
+
+/* Contacto oficial: número de empresa visible en atención al cliente y formulario. */
+.support-contact,.company-contact-link{display:inline-flex;align-items:center;gap:9px;max-width:100%;font-size:12px;font-weight:700;line-height:1.5;color:#5be1ed;border-bottom:1px solid rgba(50,217,234,.32);padding-bottom:4px;overflow-wrap:anywhere}
+.support-contact{margin-top:10px}
+.company-contact-link{margin-top:11px}
+.support-contact:hover,.company-contact-link:hover{color:#c6fbff;border-bottom-color:rgba(100,245,255,.72)}
+.support-contact span,.company-contact-link span{flex:0 0 auto}
+@media(max-width:460px){.support-contact,.company-contact-link{font-size:11px}}
+
+</style>
+  <!-- Vista de prueba autónoma: gráficos ilustrativos integrados como SVG, sin archivos adicionales. -->
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <header class="site-header" id="inicio">
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio" aria-label="Velturio, inicio">
+        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%231c6fff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2330e9e8%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22256%22%20height%3D%22256%22%20rx%3D%2245%22%20fill%3D%22%23050d21%22%2F%3E%3Cpath%20d%3D%22M45%2062%20128%20205%20211%2062h-48l-35%2069-35-69Z%22%20fill%3D%22url(%23g)%22%2F%3E%3Cpath%20d%3D%22m128%20176%2044-88%22%20stroke%3D%22%2334eff2%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.65%22%2F%3E%3C%2Fsvg%3E" alt="" />
+        <span>VELTURIO</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="#servicios">Servicios</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#precios">Precios</a>
+        <a href="#equipo">Nuestro equipo</a>
+        <a href="#contacto" class="nav-cta">Hablemos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-pad">
+      <div class="orb orb-one"></div>
+      <div class="orb orb-two"></div>
+      <div class="grid-lines" aria-hidden="true"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><span class="pulse-dot"></span> Tecnología para negocios reales</div>
+          <h1>Soluciones digitales<br><span>para hacer crecer</span><br>tu negocio.</h1>
+          <p class="hero-text">Webs, sistemas, publicidad y automatización en un solo lugar. Diseñamos herramientas claras para que tu negocio tenga más control, presencia y tiempo.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contacto">Contanos tu idea <span>↗</span></a>
+            <a class="btn btn-ghost" href="#portafolio">Ver proyectos</a>
+          </div>
+          <div class="hero-points">
+            <div><strong>01</strong><span>Diseño<br>digital</span></div>
+            <div><strong>02</strong><span>Gestión<br>simple</span></div>
+            <div><strong>03</strong><span>Procesos<br>inteligentes</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal delay-1">
+          <div class="halo"></div>
+          <div class="dashboard-shell">
+            <div class="window-bar">
+              <div class="dots"><i></i><i></i><i></i></div>
+              <span>velturio / panel</span>
+              <div class="signal">● online</div>
+            </div>
+            <div class="dash-body">
+              <aside class="dash-sidebar">
+                <img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%231c6fff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2330e9e8%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22256%22%20height%3D%22256%22%20rx%3D%2245%22%20fill%3D%22%23050d21%22%2F%3E%3Cpath%20d%3D%22M45%2062%20128%20205%20211%2062h-48l-35%2069-35-69Z%22%20fill%3D%22url(%23g)%22%2F%3E%3Cpath%20d%3D%22m128%20176%2044-88%22%20stroke%3D%22%2334eff2%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.65%22%2F%3E%3C%2Fsvg%3E" alt="Logo Velturio" />
+                <button class="active" aria-label="Inicio">⌂</button>
+                <button aria-label="Estadísticas">▥</button>
+                <button aria-label="Clientes">◇</button>
+                <button aria-label="Automatizaciones">⌁</button>
+              </aside>
+              <div class="dash-content">
+                <div class="dash-title"><div><small>RESUMEN</small><h3>Mi negocio</h3></div><span>Hoy</span></div>
+                <div class="metric-row">
+                  <article><small>VENTAS</small><b>+24%</b><i class="mini-chart up"></i></article>
+                  <article><small>CLIENTES</small><b>128</b><i class="mini-chart"></i></article>
+                  <article><small>TAREAS</small><b>8</b><i class="mini-chart short"></i></article>
+                </div>
+                <div class="chart-card">
+                  <div class="chart-head"><span>Actividad</span><small>Últimos 7 días</small></div>
+                  <svg viewBox="0 0 620 180" preserveAspectRatio="none" aria-hidden="true">
+                    <defs><linearGradient id="lineGrad" x1="0" x2="1"><stop offset="0" stop-color="#156cff"/><stop offset="1" stop-color="#27e3ea"/></linearGradient></defs>
+                    <path class="grid-path" d="M0 40H620 M0 90H620 M0 140H620" />
+                    <path class="area" d="M0,155 C60,155 70,105 120,117 C170,129 192,68 240,83 C285,97 324,38 370,62 C415,86 463,30 505,49 C552,72 572,24 620,18 L620,180 L0,180 Z" />
+                    <path class="line" d="M0,155 C60,155 70,105 120,117 C170,129 192,68 240,83 C285,97 324,38 370,62 C415,86 463,30 505,49 C552,72 572,24 620,18" />
+                  </svg>
+                </div>
+                <div class="task-row">
+                  <div><span class="task-icon">✓</span><p><strong>Inventario actualizado</strong><small>Hace 3 min</small></p></div>
+                  <div><span class="task-icon cyan">✦</span><p><strong>Respuesta automática enviada</strong><small>Hace 12 min</small></p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="float-card card-one"><span>✦</span><div><small>AUTOMATIZACIÓN</small><strong>Menos tareas repetitivas</strong></div></div>
+          <div class="float-card card-two"><span>↗</span><div><small>CRECIMIENTO</small><strong>Todo bajo control</strong></div></div>
+        </div>
+      </div>
+
+      <div class="container trusted reveal delay-2">
+        <span>Un ecosistema para</span>
+        <div class="trusted-list"><b>GESTIÓN</b><i></i><b>PUBLICIDAD</b><i></i><b>WEB</b><i></i><b>AUTOMATIZACIÓN</b></div>
+      </div>
+    </section>
+
+    <section class="services section-pad" id="servicios">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="kicker">NUESTRAS SOLUCIONES</span><h2>Lo digital, conectado<br>con tu negocio.</h2></div>
+          <p>No se trata de agregar tecnología porque sí. Elegimos lo que realmente puede simplificar tu día a día y ayudarte a crecer.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <div class="number">01</div><div class="service-icon">◎</div>
+            <h3>Webs</h3><p>Tu marca online, clara y profesional. Sitios pensados para mostrar lo que hacés y convertir visitas en consultas.</p>
+            <ul><li>Landing pages</li><li>Catálogos y presencia web</li><li>Diseño adaptable a celular</li></ul>
+            <a href="#contacto">Quiero una web <span>→</span></a>
+          </article>
+          <article class="service-card reveal delay-1">
+            <div class="number">02</div><div class="service-icon">⚙</div>
+            <h3>Sistemas</h3><p>Herramientas simples para organizar productos, ventas, clientes y procesos desde un mismo lugar.</p>
+            <ul><li>Stock e inventario</li><li>Gestión y reportes</li><li>Sistemas a medida</li></ul>
+            <a href="#sistemas">Ver sistemas <span>→</span></a>
+          </article>
+          <article class="service-card reveal delay-2">
+            <div class="number">03</div><div class="service-icon">↗</div>
+            <h3>Publicidad</h3><p>Contenido digital que mantiene activa tu marca y comunica tus servicios de forma visual y consistente.</p>
+            <ul><li>Contenido para redes</li><li>Diseño de piezas</li><li>Campañas y presencia digital</li></ul>
+            <a href="#muestra">Ver estilo <span>→</span></a>
+          </article>
+          <article class="service-card reveal delay-3 featured-card">
+            <div class="number">04</div><div class="service-icon">✦</div>
+            <div class="badge">IA + PROCESOS</div>
+            <h3>Automatización</h3><p>Conectamos tareas, datos y atención para reducir trabajo repetitivo y centralizar información.</p>
+            <ul><li>Atención al cliente</li><li>Alertas y seguimiento</li><li>Procesos conectados</li></ul>
+            <a href="#automatizacion">Automatizar mi negocio <span>→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="catalog section-pad" id="precios" aria-labelledby="catalogTitle">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="kicker">CATÁLOGO DE SERVICIOS</span><h2 id="catalogTitle">Servicios y precios.<br>Sin vueltas.</h2></div>
+          <p>Elegí el servicio que necesitás y conocé nuestros planes. Los importes están expresados en guaraníes (Gs.).</p>
+        </div>
+        <div class="catalog-guide reveal">
+          <span><b>Precio fijo:</b> importe publicado para el alcance descrito.</span>
+          <span><b>Desde:</b> precio inicial sujeto al proyecto.</span>
+          <span><b>Personalizado:</b> cotización según necesidades.</span>
+        </div>
+        <div class="catalog-columns">
+          <div class="catalog-column">
+            <div class="catalog-column-head reveal"><span class="catalog-division-icon" aria-hidden="true">⌘</span><div><span class="kicker">01 · PROGRAMACIÓN</span><h3>Tecnología y desarrollo</h3></div></div>
+            <details class="catalog-group" id="catalog-webs" open><summary><span class="catalog-group-title">Páginas web</span><span class="catalog-expand">Ver planes y precios <span aria-hidden="true">+</span></span><small>Presencia online para emprendimientos y negocios.</small></summary><div class="catalog-content"><div class="catalog-plans"><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Web Básica</h4><div class="catalog-price">Desde Gs. 250.000</div></div><ul><li>Presentación del negocio</li><li>Información de servicios y contacto</li><li>Adaptación a celulares</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Web Negocio</h4><div class="catalog-price">Desde Gs. 500.000</div></div><ul><li>Más secciones</li><li>Catálogo y formularios</li><li>Adaptación a celulares</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Web Pro</h4><div class="catalog-price">Desde Gs. 800.000</div></div><ul><li>Tienda, pedidos o reservas según propuesta</li><li>Integraciones acordadas</li><li>Adaptación a celulares</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Web 100% personalizada</h4><div class="catalog-price">Presupuesto personalizado</div></div><ul><li>Diseño, funciones y experiencia a medida</li></ul></div></div><p class="catalog-note">Dominio, hosting, mantenimiento e integraciones de pago se presupuestan según el proyecto; no existe una mensualidad general especificada.</p><a class="catalog-cta" href="#contacto">Solicitar presupuesto <span aria-hidden="true">↗</span></a></div></details>
+<details class="catalog-group" id="catalog-software"><summary><span class="catalog-group-title">Sistemas prediseñados</span><span class="catalog-expand">Ver planes y precios <span aria-hidden="true">+</span></span><small>Stock Básico, Control y Plus, con pago único.</small></summary><div class="catalog-content"><div class="catalog-plans"><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Stock Básico</h4><div class="catalog-price">Gs. 100.000<small>Pago único</small></div></div><ul><li>Productos y cantidades</li><li>Entradas y salidas</li><li>Búsqueda y exportación de información</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Stock Control</h4><div class="catalog-price">Gs. 200.000<small>Pago único</small></div></div><ul><li>Inventario del Básico</li><li>Costos, precios y proveedores</li><li>Alertas de existencias bajas</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Stock Plus</h4><div class="catalog-price">Gs. 400.000<small>Pago único</small></div></div><ul><li>Inventario y ventas</li><li>Reportes del negocio</li><li>Usuarios y permisos</li></ul></div></div><p class="catalog-note">Sin mensualidad para los planes prediseñados. Instalación, conexiones, ampliaciones y compatibilidad se determinan según el plan; servidor y aplicación móvil no están incluidos automáticamente.</p><a class="catalog-cta" href="#contacto">Solicitar presupuesto <span aria-hidden="true">↗</span></a></div></details>
+<details class="catalog-group" id="catalog-amedida"><summary><span class="catalog-group-title">Desarrollo personalizado</span><span class="catalog-expand">Ver planes y precios <span aria-hidden="true">+</span></span><small>Soluciones creadas según los procesos y objetivos del cliente.</small></summary><div class="catalog-content"><div class="catalog-plans"><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Sistemas a medida</h4><div class="catalog-price">Presupuesto personalizado</div></div><ul><li>Gestión, registros, reportes e integraciones según proyecto</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Aplicaciones</h4><div class="catalog-price">Presupuesto personalizado</div></div><ul><li>Diseño y desarrollo</li><li>Conexiones contempladas en la propuesta</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Videojuegos</h4><div class="catalog-price">Presupuesto personalizado</div></div><ul><li>Concepto, prototipo y desarrollo según plataforma y complejidad</li></ul></div></div><p class="catalog-note">El alcance, soporte y mantenimiento se acuerdan individualmente.</p><a class="catalog-cta" href="#contacto">Solicitar presupuesto <span aria-hidden="true">↗</span></a></div></details>
+<details class="catalog-group" id="catalog-chatbots"><summary><span class="catalog-group-title">Chatbots, IA y CRM</span><span class="catalog-expand">Ver planes y precios <span aria-hidden="true">+</span></span><small>Asistentes para consultas, atención y gestión de clientes.</small></summary><div class="catalog-content"><div class="catalog-plans"><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Chatbot Básico</h4><div class="catalog-price">Gs. 250.000 inicial<small>Gs. 50.000/mes</small></div></div><ul><li>Preguntas frecuentes y horarios</li><li>Información de productos</li><li>Derivación a una persona</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Chatbot con IA</h4><div class="catalog-price">Gs. 450.000 inicial<small>Gs. 100.000/mes</small></div></div><ul><li>Conversaciones más naturales</li><li>Comprensión de consultas</li><li>Recopilación de datos y atención basada en el negocio</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>IA Pro + CRM</h4><div class="catalog-price">Desde Gs. 750.000<small>Mensualidad a confirmar</small></div></div><ul><li>Asistente conectado a CRM o sistema</li><li>Clientes, consultas, pedidos y estados</li><li>Historial y seguimiento comercial</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>CRM independiente</h4><div class="catalog-price">Presupuesto según alcance</div></div><ul><li>Contactos, consultas, pedidos e historial</li><li>Seguimiento de oportunidades e integraciones</li></ul></div></div><p class="catalog-note">Los límites de uso y costos externos de WhatsApp, IA y otras plataformas deben acordarse. La mensualidad de IA Pro + CRM no está especificada; eso no significa que sea gratuita.</p><a class="catalog-cta" href="#contacto">Solicitar presupuesto <span aria-hidden="true">↗</span></a></div></details>
+<details class="catalog-group" id="catalog-automatizaciones"><summary><span class="catalog-group-title">Automatizaciones</span><span class="catalog-expand">Ver planes y precios <span aria-hidden="true">+</span></span><small>Flujos conectados que reducen tareas repetitivas.</small></summary><div class="catalog-content"><div class="catalog-plans"><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Automatización Básica</h4><div class="catalog-price">Desde Gs. 200.000</div></div><ul><li>Formulario → registro → notificación</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Automatización Negocio</h4><div class="catalog-price">Desde Gs. 450.000</div></div><ul><li>Pedido → CRM → sistema → aviso → seguimiento</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Automatización con IA</h4><div class="catalog-price">Desde Gs. 700.000</div></div><ul><li>Interpretación y clasificación de información</li><li>Registro y respuestas en el flujo acordado</li></ul></div></div><p class="catalog-note">Las herramientas y conexiones se definen antes de implementar. Puede abarcar Notion, formularios, sistemas, ventas o redes. No hay una mensualidad única aplicable a todos los proyectos.</p><a class="catalog-cta" href="#contacto">Solicitar presupuesto <span aria-hidden="true">↗</span></a></div></details>
+<details class="catalog-group" id="catalog-trescientos"><summary><span class="catalog-group-title">Velturio 360</span><span class="catalog-expand">Ver planes y precios <span aria-hidden="true">+</span></span><small>Servicio integral que combina tecnología, diseño y comunicación.</small></summary><div class="catalog-content"><div class="catalog-plans"><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Proyecto integral</h4><div class="catalog-price">Propuesta personalizada</div></div><ul><li>Sistemas, presencia digital y procesos conectados</li><li>Posible web, app, CRM, publicidad y automatización</li><li>Desarrollo por etapas según necesidades</li></ul></div></div><p class="catalog-note">Cada propuesta especifica cuáles componentes incluye; no existe un importe ni un alcance universal.</p><a class="catalog-cta" href="#contacto">Solicitar presupuesto <span aria-hidden="true">↗</span></a></div></details>
+          </div>
+          <div class="catalog-column">
+            <div class="catalog-column-head reveal"><span class="catalog-division-icon" aria-hidden="true">✧</span><div><span class="kicker">02 · IDENTIDAD</span><h3>Marketing y creatividad</h3></div></div>
+            <details class="catalog-group" id="catalog-redes" open><summary><span class="catalog-group-title">Redes sociales y feed</span><span class="catalog-expand">Ver planes y precios <span aria-hidden="true">+</span></span><small>Presentación visual de perfiles y contenido para Instagram.</small></summary><div class="catalog-content"><div class="catalog-plans"><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Presentación Básica</h4><div class="catalog-price">Gs. 150.000</div></div><ul><li>Biografía y presentación de perfil</li><li>Historias destacadas</li><li>Tres publicaciones</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Feed Profesional</h4><div class="catalog-price">Gs. 300.000</div></div><ul><li>Nueve publicaciones</li><li>Identidad visual del feed</li><li>Historias destacadas</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Feed Premium</h4><div class="catalog-price">Gs. 500.000</div></div><ul><li>Doce publicaciones o carruseles</li><li>Textos y llamadas a la acción</li><li>Estructura comercial del contenido</li></ul></div></div><p class="catalog-note">Son paquetes de presentación y contenido; no implican gestión mensual, atención de mensajes ni inversión publicitaria.</p><a class="catalog-cta" href="#contacto">Solicitar presupuesto <span aria-hidden="true">↗</span></a></div></details>
+<details class="catalog-group" id="catalog-videos"><summary><span class="catalog-group-title">Videos publicitarios</span><span class="catalog-expand">Ver planes y precios <span aria-hidden="true">+</span></span><small>Piezas para Reels, TikTok, Shorts y anuncios.</small></summary><div class="catalog-content"><div class="catalog-plans"><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Un video de hasta 30 segundos</h4><div class="catalog-price">Gs. 40.000</div></div><ul><li>Idea, guion, voz, imágenes, edición y entrega</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Pack de tres videos</h4><div class="catalog-price">Gs. 100.000</div></div><ul><li>Tres piezas; duración y adaptaciones según acuerdo</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Pack de siete videos</h4><div class="catalog-price">Gs. 200.000</div></div><ul><li>Siete piezas; duración y adaptaciones según acuerdo</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Un video de hasta 60 segundos</h4><div class="catalog-price">Desde Gs. 70.000</div></div><ul><li>Idea, guion, voz, imágenes, edición y entrega</li></ul></div></div><p class="catalog-note">La duración de las piezas de los packs se confirma antes de contratar. La inversión para difundir anuncios no está incluida por defecto.</p><a class="catalog-cta" href="#contacto">Solicitar presupuesto <span aria-hidden="true">↗</span></a></div></details>
+<details class="catalog-group" id="catalog-mascotas"><summary><span class="catalog-group-title">Mascotas de marca</span><span class="catalog-expand">Ver planes y precios <span aria-hidden="true">+</span></span><small>Personajes e imágenes para darle identidad a tu negocio.</small></summary><div class="catalog-content"><div class="catalog-plans"><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Creación de mascota</h4><div class="catalog-price">Gs. 75.000</div></div><ul><li>Concepto, colores, personalidad e imagen principal</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Mascota + cinco imágenes</h4><div class="catalog-price">Gs. 150.000</div></div><ul><li>Mascota y cinco imágenes para contenido</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Pack Premium</h4><div class="catalog-price">Gs. 250.000</div></div><ul><li>Diez imágenes</li><li>Expresiones</li><li>Adaptación para redes</li></ul></div></div><p class="catalog-note">Las piezas pueden emplearse en promociones, productos, historias y publicidad.</p><a class="catalog-cta" href="#contacto">Solicitar presupuesto <span aria-hidden="true">↗</span></a></div></details>
+<details class="catalog-group" id="catalog-mascotas-videos"><summary><span class="catalog-group-title">Videos con mascota</span><span class="catalog-expand">Ver planes y precios <span aria-hidden="true">+</span></span><small>Contenido animado protagonizado por una mascota de marca.</small></summary><div class="catalog-content"><div class="catalog-plans"><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Un video con mascota</h4><div class="catalog-price">Gs. 150.000</div></div><ul><li>Guion, voz, animación y edición</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Tres videos con mascota</h4><div class="catalog-price">Gs. 375.000</div></div><ul><li>Guion, voz, animación y edición</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Cinco videos con mascota</h4><div class="catalog-price">Gs. 550.000</div></div><ul><li>Guion, voz, animación y edición</li></ul></div></div><p class="catalog-note">Duración, formato y creación previa de la mascota se establecen al contratar.</p><a class="catalog-cta" href="#contacto">Solicitar presupuesto <span aria-hidden="true">↗</span></a></div></details>
+<details class="catalog-group" id="catalog-jingles"><summary><span class="catalog-group-title">Música y jingles</span><span class="catalog-expand">Ver planes y precios <span aria-hidden="true">+</span></span><small>Identidad sonora para anuncios y campañas.</small></summary><div class="catalog-content"><div class="catalog-plans"><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Jingle corto</h4><div class="catalog-price">Desde Gs. 50.000</div></div><ul><li>Pieza musical para Reels, promociones y anuncios</li></ul></div><div class="catalog-plan"><div class="catalog-plan-heading"><h4>Jingle completo</h4><div class="catalog-price">Desde Gs. 100.000</div></div><ul><li>Mensaje y letra</li><li>Producción musical más completa</li></ul></div></div><p class="catalog-note">Duración, revisiones y derechos de uso deben quedar detallados en el presupuesto.</p><a class="catalog-cta" href="#contacto">Solicitar presupuesto <span aria-hidden="true">↗</span></a></div></details>
+
+          </div>
+        </div>
+        <div class="catalog-extras"><div><span class="kicker">SERVICIOS COMPLEMENTARIOS</span><h3>También podemos ayudarte con…</h3></div><details class="catalog-group" id="catalog-otros"><summary><span class="catalog-group-title">Otros servicios y alcances</span><span class="catalog-expand">Ver planes y precios <span aria-hidden="true">+</span></span><small>Trabajos que se consultan según disponibilidad y alcance.</small></summary><div class="catalog-content"><ul class="catalog-other"><li>Asistentes de llamadas con IA</li><li>Soporte, mantenimiento y actualizaciones</li><li>Instalación, configuración y capacitación</li><li>Copias de seguridad y recuperación</li><li>Piezas gráficas individuales y contenido especial</li></ul><p class="catalog-note">Tarifas a confirmar: el catálogo recibido no especifica importes para estas prestaciones.</p><a class="catalog-cta" href="#contacto">Solicitar presupuesto <span aria-hidden="true">↗</span></a></div></details></div>
+        <p class="catalog-footer">Los precios corresponden al catálogo de octubre de 2026 y pueden variar según el alcance acordado. Condiciones de entrega, revisiones, servicios de terceros, mantenimiento y cargos recurrentes se aclaran antes de contratar.</p>
+      </div>
+    </section>
+
+    <section class="systems section-pad" id="sistemas">
+      <div class="container systems-grid">
+        <div class="systems-copy reveal">
+          <span class="kicker">SISTEMAS PARA NEGOCIOS</span>
+          <h2>Controlá el stock.<br><span>Sin complicarlo.</span></h2>
+          <p>Opciones prediseñadas con pago único para empezar rápido, más la posibilidad de desarrollar una solución adaptada a tu negocio.</p>
+          <div class="system-features">
+            <div><span>▣</span><p><strong>Productos organizados</strong><small>Códigos, categorías y existencias.</small></p></div>
+            <div><span>⇄</span><p><strong>Entradas y salidas</strong><small>Movimientos claros y registrados.</small></p></div>
+            <div><span>◉</span><p><strong>Alertas y reportes</strong><small>Información útil para decidir mejor.</small></p></div>
+          </div>
+        </div>
+
+        <div class="pricing-stack reveal delay-1">
+          <article class="price-card">
+            <div><span>BÁSICO</span><h3>Stock Básico</h3></div><strong>Gs. 100.000</strong><small>pago único</small>
+            <p>Para empezar a registrar y controlar tu inventario.</p><a href="#contacto">Consultar →</a>
+          </article>
+          <article class="price-card recommended">
+            <div><span>MÁS CONTROL</span><h3>Stock Control</h3></div><strong>Gs. 200.000</strong><small>pago único</small>
+            <p>Más información sobre precios, proveedores y reposición.</p><a href="#contacto">Consultar →</a>
+          </article>
+          <article class="price-card">
+            <div><span>GESTIÓN COMPLETA</span><h3>Stock Plus</h3></div><strong>Gs. 400.000</strong><small>pago único</small>
+            <p>Ventas, reportes, usuarios y más herramientas de gestión.</p><a href="#contacto">Consultar →</a>
+          </article>
+          <p class="custom-note"><span>＋</span><strong>¿Necesitás algo distinto?</strong> También desarrollamos sistemas personalizados según tu operación.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="automation section-pad" id="automatizacion">
+      <div class="container auto-grid">
+        <div class="auto-visual reveal">
+          <div class="phone phone-main">
+            <div class="phone-top"><span>9:41</span><div>● ● ▰</div></div>
+            <div class="phone-header"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20256%20256%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%231c6fff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2330e9e8%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22256%22%20height%3D%22256%22%20rx%3D%2245%22%20fill%3D%22%23050d21%22%2F%3E%3Cpath%20d%3D%22M45%2062%20128%20205%20211%2062h-48l-35%2069-35-69Z%22%20fill%3D%22url(%23g)%22%2F%3E%3Cpath%20d%3D%22m128%20176%2044-88%22%20stroke%3D%22%2334eff2%22%20stroke-width%3D%228%22%20stroke-linecap%3D%22round%22%20opacity%3D%22.65%22%2F%3E%3C%2Fsvg%3E" alt=""/><div><b>Velturio</b><small>Asistente virtual</small></div><span>•••</span></div>
+            <div class="messages">
+              <div class="bubble bot">Hola 👋 ¿En qué puedo ayudarte?</div>
+              <div class="bubble user">¿Tienen disponible este producto?</div>
+              <div class="bubble bot">Sí, hay stock. ¿Querés que te pase precio y opciones?</div>
+              <div class="typing"><i></i><i></i><i></i></div>
+            </div>
+            <div class="input-pill"><span>Escribir mensaje</span><b>➤</b></div>
+          </div>
+          <div class="node node-a"><i>01</i><b>Consulta</b></div>
+          <div class="node node-b"><i>02</i><b>Respuesta</b></div>
+          <div class="node node-c"><i>03</i><b>Derivación</b></div>
+          <svg class="connectors" viewBox="0 0 640 640" aria-hidden="true"><path d="M130 150 C225 130 250 205 315 260"/><path d="M480 160 C410 190 420 235 365 285"/><path d="M495 485 C420 470 405 410 370 365"/></svg>
+        </div>
+
+        <div class="auto-copy reveal delay-1">
+          <span class="kicker">AUTOMATIZACIÓN + IA</span>
+          <h2>Más organización.<br><span>Menos tareas repetitivas.</span></h2>
+          <p>Podemos conectar partes clave de tu negocio para que la información fluya mejor y tu equipo pierda menos tiempo en tareas que pueden resolverse solas.</p>
+          <div class="auto-list">
+            <div><b>01</b><p><strong>Atención al cliente</strong><small>Respuestas iniciales, consultas frecuentes y derivación a una persona.</small><a class="support-contact" href="https://wa.me/595973345751" target="_blank" rel="noopener noreferrer">WhatsApp de Velturio: +595 973 345751 <span aria-hidden="true">↗</span></a></p></div>
+            <div><b>02</b><p><strong>Ventas, stock y alertas</strong><small>Datos conectados para tener una vista más clara del negocio.</small></p></div>
+            <div><b>03</b><p><strong>Web y redes</strong><small>Una presencia digital más ordenada y coherente.</small></p></div>
+          </div>
+          <a class="text-link" href="#contacto">Contanos qué querés automatizar <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="process section-pad" id="proceso">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="kicker">CÓMO TRABAJAMOS</span><h2>Primero entendemos.<br>Después construimos.</h2></div>
+          <p>Una solución útil empieza por conocer el problema. Por eso el proceso arranca con una conversación, no con una plantilla.</p>
+        </div>
+        <div class="process-track reveal delay-1">
+          <article><span>01</span><i></i><h3>Nos contás tu idea</h3><p>Qué hacés, qué necesitás y qué te gustaría mejorar.</p></article>
+          <article><span>02</span><i></i><h3>Analizamos</h3><p>Definimos qué solución tiene sentido para tu negocio.</p></article>
+          <article><span>03</span><i></i><h3>Diseñamos y desarrollamos</h3><p>Construimos la propuesta y ajustamos los detalles con vos.</p></article>
+          <article><span>04</span><i></i><h3>Implementamos</h3><p>Dejamos la solución lista para usar y seguir creciendo.</p></article>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Casos reales del catálogo recibido. Los gráficos son ilustrativos: no sustituyen fotografías ni capturas verificadas. -->
+    <section class="portfolio section-pad" id="portafolio" aria-labelledby="portfolioTitle">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="kicker">NUESTRO PORTAFOLIO</span><h2 id="portfolioTitle">Nuestro trabajo,<br>en proyectos reales.</h2></div>
+          <p>Diseño, desarrollo web, software, automatización y videojuegos. Explorá nuestros trabajos y conocé qué hicimos en cada uno.</p>
+        </div>
+        <div class="portfolio-filters reveal" role="group" aria-label="Filtrar proyectos">
+          <button type="button" class="portfolio-filter is-active" data-project-filter="all" aria-pressed="true">Todos <span>11</span></button>
+          <button type="button" class="portfolio-filter" data-project-filter="design" aria-pressed="false">Diseño <span>4</span></button>
+          <button type="button" class="portfolio-filter" data-project-filter="web" aria-pressed="false">Webs <span>2</span></button>
+          <button type="button" class="portfolio-filter" data-project-filter="systems" aria-pressed="false">Sistemas <span>3</span></button>
+          <button type="button" class="portfolio-filter" data-project-filter="ai" aria-pressed="false">IA <span>1</span></button>
+          <button type="button" class="portfolio-filter" data-project-filter="game" aria-pressed="false">Videojuegos <span>1</span></button>
+        </div>
+        <div class="portfolio-grid">
+          <article class="portfolio-card reveal" data-project-category="web">
+ <div class="portfolio-visual portfolio-art art-web" aria-label="Gráfico ilustrativo de Vortex">
+  <div class="preview-top"><span>PÁGINAS WEB</span><span aria-hidden="true">✦</span></div>
+  <div class="art-center"><span class="art-graphic" aria-hidden="true">⌘</span><strong>VORTEX</strong><small>Sitio para eventos</small></div>
+  <div class="preview-foot"><span>VELTURIO · PORTAFOLIO</span><span>Vista ilustrativa</span></div>
+ </div>
+ <div class="portfolio-body">
+  <span class="project-type">PÁGINAS WEB</span>
+  <h3>Vortex</h3><p>Diseño y desarrollo de una web para eventos, con presentación de la propuesta y registro digital de entradas.</p>
+  <details class="project-details"><summary>Conocer el proyecto <span aria-hidden="true">+</span></summary>
+    <div class="project-details-content"><strong>Objetivo</strong><p>Crear una presencia digital para Vortex y facilitar el registro de asistentes.</p><strong>Trabajo de Velturio</strong><p>Página web adaptable a celular. El sistema de entradas incorpora registro, códigos QR y control de acceso.</p><strong>Material para el caso</strong><p>Capturas de la portada, registro de entradas y vista móvil.</p></div>
+  </details>
+  <div class="portfolio-action"><a href="https://vortex-py.netlify.app" target="_blank" rel="noopener noreferrer">Visitar sitio <span aria-hidden="true">↗</span></a></div>
+ </div></article>
+<article class="portfolio-card reveal" data-project-category="systems">
+ <div class="portfolio-visual portfolio-art art-systems" aria-label="Gráfico ilustrativo de Stock Velturio">
+  <div class="preview-top"><span>SISTEMAS Y APPS</span><span aria-hidden="true">✦</span></div>
+  <div class="art-center"><span class="art-graphic" aria-hidden="true">▦</span><strong>STOCK</strong><small>Básico · Control · Plus</small></div>
+  <div class="preview-foot"><span>VELTURIO · PORTAFOLIO</span><span>Vista ilustrativa</span></div>
+ </div>
+ <div class="portfolio-body">
+  <span class="project-type">SISTEMAS Y APPS</span>
+  <h3>Stock Velturio</h3><p>Línea de tres sistemas prediseñados para inventario y gestión de negocios.</p>
+  <details class="project-details"><summary>Conocer el proyecto <span aria-hidden="true">+</span></summary>
+    <div class="project-details-content"><strong>Objetivo</strong><p>Ofrecer alternativas de gestión de stock con diferentes niveles de funciones.</p><strong>Trabajo de Velturio</strong><p>Stock Básico, Stock Control y Stock Plus; productos, movimientos e informes según cada plan.</p><strong>Material para el caso</strong><p>Pantallas reales de cada versión y comparativa de sus funcionalidades.</p></div>
+  </details>
+  <div class="portfolio-action"><a href="#sistemas">Ver planes <span aria-hidden="true">↗</span></a></div>
+ </div></article>
+<article class="portfolio-card reveal" data-project-category="ai">
+ <div class="portfolio-visual portfolio-art art-ai" aria-label="Gráfico ilustrativo de Veli">
+  <div class="preview-top"><span>AUTOMATIZACIÓN E IA</span><span aria-hidden="true">✦</span></div>
+  <div class="art-center"><span class="art-graphic" aria-hidden="true">✧</span><strong>VELI ✦</strong><small>Asistente para WhatsApp</small></div>
+  <div class="preview-foot"><span>VELTURIO · PORTAFOLIO</span><span>Vista ilustrativa</span></div>
+ </div>
+ <div class="portfolio-body">
+  <span class="project-type">AUTOMATIZACIÓN E IA</span>
+  <h3>Veli</h3><p>Asistente virtual de Velturio, integrado con WhatsApp para consultas y atención inicial.</p>
+  <details class="project-details"><summary>Conocer el proyecto <span aria-hidden="true">+</span></summary>
+    <div class="project-details-content"><strong>Objetivo</strong><p>Agilizar la atención y la respuesta a preguntas de clientes.</p><strong>Trabajo de Velturio</strong><p>Integración de mensajería y respuestas del asistente con información de Velturio.</p><strong>Material para el caso</strong><p>Capturas verificadas de conversaciones de demostración, sin información personal.</p></div>
+  </details>
+  <div class="portfolio-action"><a href="#automatizacion">Ver automatización <span aria-hidden="true">↗</span></a></div>
+ </div></article>
+<article class="portfolio-card reveal" data-project-category="design">
+ <div class="portfolio-visual portfolio-art art-design" aria-label="Gráfico ilustrativo de R Energy">
+  <div class="preview-top"><span>DISEÑO Y PUBLICIDAD</span><span aria-hidden="true">✦</span></div>
+  <div class="art-center"><span class="art-graphic" aria-hidden="true">✳</span><strong>R ENERGY</strong><small>Electromecánica</small></div>
+  <div class="preview-foot"><span>VELTURIO · PORTAFOLIO</span><span>Vista ilustrativa</span></div>
+ </div>
+ <div class="portfolio-body">
+  <span class="project-type">DISEÑO Y PUBLICIDAD</span>
+  <h3>R Energy</h3><p>Diseño de piezas gráficas para comunicar los servicios de electromecánica de R Energy.</p>
+  <details class="project-details"><summary>Conocer el proyecto <span aria-hidden="true">+</span></summary>
+    <div class="project-details-content"><strong>Objetivo</strong><p>Presentar de manera visual los servicios de la marca.</p><strong>Trabajo de Velturio</strong><p>Producción de piezas de diseño gráfico para comunicación y promoción.</p><strong>Material para el caso</strong><p>Selección de los diseños realizados.</p></div>
+  </details>
+  
+ </div></article>
+<article class="portfolio-card reveal" data-project-category="design">
+ <div class="portfolio-visual portfolio-art art-design" aria-label="Gráfico ilustrativo de Kambushi">
+  <div class="preview-top"><span>DISEÑO Y PUBLICIDAD</span><span aria-hidden="true">✦</span></div>
+  <div class="art-center"><span class="art-graphic" aria-hidden="true">✳</span><strong>KAMBUSHI</strong><small>Diseño y contenido</small></div>
+  <div class="preview-foot"><span>VELTURIO · PORTAFOLIO</span><span>Vista ilustrativa</span></div>
+ </div>
+ <div class="portfolio-body">
+  <span class="project-type">DISEÑO Y PUBLICIDAD</span>
+  <h3>Kambushi</h3><p>Contenido visual y diseños de presentación creados para Kambushi.</p>
+  <details class="project-details"><summary>Conocer el proyecto <span aria-hidden="true">+</span></summary>
+    <div class="project-details-content"><strong>Objetivo</strong><p>Reunir y presentar la identidad visual y los trabajos desarrollados.</p><strong>Trabajo de Velturio</strong><p>Diseño de materiales gráficos y contenido de presentación; detalle por completar con los archivos reales.</p><strong>Material para el caso</strong><p>Galería de piezas agrupadas por trabajo.</p></div>
+  </details>
+  
+ </div></article>
+<article class="portfolio-card reveal" data-project-category="design">
+ <div class="portfolio-visual portfolio-art art-design" aria-label="Gráfico ilustrativo de El Rodeo · Feed">
+  <div class="preview-top"><span>DISEÑO Y PUBLICIDAD</span><span aria-hidden="true">✦</span></div>
+  <div class="art-center"><span class="art-graphic" aria-hidden="true">✳</span><strong>EL RODEO</strong><small>Feed y publicidad</small></div>
+  <div class="preview-foot"><span>VELTURIO · PORTAFOLIO</span><span>Vista ilustrativa</span></div>
+ </div>
+ <div class="portfolio-body">
+  <span class="project-type">DISEÑO Y PUBLICIDAD</span>
+  <h3>El Rodeo · Feed</h3><p>Publicaciones y promociones para redes sociales de la carnicería El Rodeo.</p>
+  <details class="project-details"><summary>Conocer el proyecto <span aria-hidden="true">+</span></summary>
+    <div class="project-details-content"><strong>Objetivo</strong><p>Comunicar productos, precios, ofertas y promociones.</p><strong>Trabajo de Velturio</strong><p>Diseño de feed, publicaciones individuales y materiales publicitarios.</p><strong>Material para el caso</strong><p>Captura del feed completo y publicaciones individuales.</p></div>
+  </details>
+  
+ </div></article>
+<article class="portfolio-card reveal" data-project-category="systems">
+ <div class="portfolio-visual portfolio-art art-systems" aria-label="Gráfico ilustrativo de El Rodeo · Sistema">
+  <div class="preview-top"><span>SISTEMAS Y APPS</span><span aria-hidden="true">✦</span></div>
+  <div class="art-center"><span class="art-graphic" aria-hidden="true">▦</span><strong>EL RODEO</strong><small>Software a medida</small></div>
+  <div class="preview-foot"><span>VELTURIO · PORTAFOLIO</span><span>Vista ilustrativa</span></div>
+ </div>
+ <div class="portfolio-body">
+  <span class="project-type">SISTEMAS Y APPS</span>
+  <h3>El Rodeo · Sistema</h3><p>Sistema personalizado para carnicería con módulos de caja, productos, inventario, compras, ventas, usuarios y reportes.</p>
+  <details class="project-details"><summary>Conocer el proyecto <span aria-hidden="true">+</span></summary>
+    <div class="project-details-content"><strong>Objetivo</strong><p>Adaptar la gestión informática a las necesidades operativas de la carnicería.</p><strong>Trabajo de Velturio</strong><p>Desarrollo de módulos de gestión y trabajo en conexión a servidor para acceso desde otros dispositivos. Las funciones se demostrarán según la versión verificada.</p><strong>Material para el caso</strong><p>Pantallas reales de caja, administración y demostraciones verificadas.</p></div>
+  </details>
+  
+ </div></article>
+<article class="portfolio-card reveal" data-project-category="web">
+ <div class="portfolio-visual portfolio-art art-web" aria-label="Gráfico ilustrativo de Web de Velturio">
+  <div class="preview-top"><span>PÁGINAS WEB</span><span aria-hidden="true">✦</span></div>
+  <div class="art-center"><span class="art-graphic" aria-hidden="true">⌘</span><strong>VELTURIO</strong><small>Página empresarial</small></div>
+  <div class="preview-foot"><span>VELTURIO · PORTAFOLIO</span><span>Vista ilustrativa</span></div>
+ </div>
+ <div class="portfolio-body">
+  <span class="project-type">PÁGINAS WEB</span>
+  <h3>Web de Velturio</h3><p>Sitio web de la propia empresa para presentar servicios, productos, portafolio y contacto.</p>
+  <details class="project-details"><summary>Conocer el proyecto <span aria-hidden="true">+</span></summary>
+    <div class="project-details-content"><strong>Objetivo</strong><p>Unificar la presentación de la marca y sus vías de contacto.</p><strong>Trabajo de Velturio</strong><p>Diseño y desarrollo de la página adaptable a computadoras y celulares.</p><strong>Material para el caso</strong><p>Capturas reales de escritorio y celular.</p></div>
+  </details>
+  <div class="portfolio-action"><a href="#inicio">Ver inicio <span aria-hidden="true">↗</span></a></div>
+ </div></article>
+<article class="portfolio-card reveal" data-project-category="systems">
+ <div class="portfolio-visual portfolio-art art-systems" aria-label="Gráfico ilustrativo de App Velturio">
+  <div class="preview-top"><span>SISTEMAS Y APPS</span><span aria-hidden="true">✦</span></div>
+  <div class="art-center"><span class="art-graphic" aria-hidden="true">▦</span><strong>VELTURIO APP</strong><small>Aplicación móvil</small></div>
+  <div class="preview-foot"><span>VELTURIO · PORTAFOLIO</span><span>Vista ilustrativa</span></div>
+ </div>
+ <div class="portfolio-body">
+  <span class="project-type">SISTEMAS Y APPS</span>
+  <h3>App Velturio</h3><p>Aplicación móvil para vincular negocios mediante QR y consultar información comercial desde el celular.</p>
+  <details class="project-details"><summary>Conocer el proyecto <span aria-hidden="true">+</span></summary>
+    <div class="project-details-content"><strong>Objetivo</strong><p>Permitir consultas de información desde un dispositivo móvil.</p><strong>Trabajo de Velturio</strong><p>Vinculación por QR y pantallas para resumen del negocio, productos y ventas. Funciones administrativas solo cuando estén comprobadas.</p><strong>Material para el caso</strong><p>Inicio, vinculación y vistas reales del negocio.</p></div>
+  </details>
+  
+ </div></article>
+<article class="portfolio-card reveal" data-project-category="game">
+ <div class="portfolio-visual portfolio-art art-game" aria-label="Gráfico ilustrativo de Massive Nightmare">
+  <div class="preview-top"><span>VIDEOJUEGOS</span><span aria-hidden="true">✦</span></div>
+  <div class="art-center"><span class="art-graphic" aria-hidden="true">◇</span><strong>MASSIVE</strong><small>Nightmare · En desarrollo</small></div>
+  <div class="preview-foot"><span>VELTURIO · PORTAFOLIO</span><span>Vista ilustrativa</span></div>
+ </div>
+ <div class="portfolio-body">
+  <span class="project-type">VIDEOJUEGOS · <em class="project-status">EN DESARROLLO</em></span>
+  <h3>Massive Nightmare</h3><p>Videojuego de terror en desarrollo con entornos 3D, exploración, interacciones y controles para Android.</p>
+  <details class="project-details"><summary>Conocer el proyecto <span aria-hidden="true">+</span></summary>
+    <div class="project-details-content"><strong>Objetivo</strong><p>Crear una experiencia de terror y exploración interactiva para dispositivos Android.</p><strong>Trabajo de Velturio</strong><p>Trabajo en escenarios 3D, personajes, objetos interactivos, enemigo con inteligencia artificial y controles móviles.</p><strong>Material para el caso</strong><p>Menú, escenas reales y videos de gameplay.</p></div>
+  </details>
+  
+ </div></article>
+<article class="portfolio-card reveal" data-project-category="design">
+ <div class="portfolio-visual portfolio-art art-design" aria-label="Gráfico ilustrativo de Hell Lion">
+  <div class="preview-top"><span>DISEÑO Y PUBLICIDAD</span><span aria-hidden="true">✦</span></div>
+  <div class="art-center"><span class="art-graphic" aria-hidden="true">✳</span><strong>HELL LION</strong><small>Moda fitness</small></div>
+  <div class="preview-foot"><span>VELTURIO · PORTAFOLIO</span><span>Vista ilustrativa</span></div>
+ </div>
+ <div class="portfolio-body">
+  <span class="project-type">DISEÑO Y PUBLICIDAD</span>
+  <h3>Hell Lion</h3><p>Diseño del feed de Instagram y contenido visual de productos para una marca de ropa fitness.</p>
+  <details class="project-details"><summary>Conocer el proyecto <span aria-hidden="true">+</span></summary>
+    <div class="project-details-content"><strong>Objetivo</strong><p>Dar una presentación visual reconocible a prendas y productos.</p><strong>Trabajo de Velturio</strong><p>Composiciones del feed, publicaciones de productos y presentaciones con modelos.</p><strong>Material para el caso</strong><p>Vista completa del feed y piezas individuales.</p></div>
+  </details>
+  
+ </div></article>
+        </div>
+        <p class="portfolio-visual-note">Las portadas son ilustraciones identificativas, no capturas de los productos. Se incorporarán fotografías, diseños y demostraciones reales de cada caso cuando estén disponibles.</p>
+      </div>
+    </section>
+
+    <section class="showcase section-pad" id="muestra">
+      <div class="container">
+        <div class="showcase-heading reveal"><span class="kicker">IDENTIDAD VELTURIO</span><h2>Una marca digital,<br>visual y directa.</h2><p>La misma línea azul y cyan de nuestras redes, llevada a una experiencia web más limpia.</p></div>
+        <div class="showcase-grid">
+          <figure class="poster poster-a reveal"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22900%22%20viewBox%3D%220%200%201200%20900%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23040b1e%22%2F%3E%3Cstop%20offset%3D%22.55%22%20stop-color%3D%22%230d3f85%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2303102a%22%2F%3E%3C%2FlinearGradient%3E%3CradialGradient%20id%3D%22r%22%3E%3Cstop%20stop-color%3D%22%230fbed2%22%20stop-opacity%3D%22.55%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%230fbed2%22%20stop-opacity%3D%220%22%2F%3E%3C%2FradialGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%221200%22%20height%3D%22900%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22810%22%20cy%3D%22310%22%20r%3D%22440%22%20fill%3D%22url(%23r)%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%230fbed2%22%20stroke-opacity%3D%22.26%22%3E%3Ccircle%20cx%3D%22835%22%20cy%3D%22370%22%20r%3D%22220%22%2F%3E%3Ccircle%20cx%3D%22835%22%20cy%3D%22370%22%20r%3D%22300%22%2F%3E%3Ccircle%20cx%3D%22835%22%20cy%3D%22370%22%20r%3D%22380%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M0%20700Q300%20590%20590%20760T1200%20700%22%20stroke%3D%22%230fbed2%22%20stroke-opacity%3D%22.25%22%20stroke-width%3D%224%22%20fill%3D%22none%22%2F%3E%3Ctext%20x%3D%2285%22%20y%3D%22118%22%20fill%3D%22%230fbed2%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2229%22%20letter-spacing%3D%229%22%20font-weight%3D%22700%22%3EVELTURIO%3C%2Ftext%3E%3Ctext%20x%3D%2285%22%20y%3D%22390%22%20fill%3D%22%23effaff%22%20font-family%3D%22Arial%2Csans-serif%22%20font-weight%3D%22800%22%20font-size%3D%2273%22%3ESOLUCIONES%3C%2Ftext%3E%3Ctext%20x%3D%2287%22%20y%3D%22458%22%20fill%3D%22%23b0d8e8%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2229%22%3ETransformamos%20ideas%20en%20herramientas%20digitales%3C%2Ftext%3E%3Ctext%20x%3D%2287%22%20y%3D%22785%22%20fill%3D%22%2368e8ed%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2222%22%20letter-spacing%3D%226%22%3EDESARROLLO%20%C2%B7%20DISE%C3%91O%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Publicidad de soluciones digitales de Velturio"><figcaption><span>01</span><b>Soluciones digitales</b></figcaption></figure>
+          <figure class="poster poster-b reveal delay-1"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22900%22%20viewBox%3D%220%200%201200%20900%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23040b1e%22%2F%3E%3Cstop%20offset%3D%22.55%22%20stop-color%3D%22%2311346f%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2303102a%22%2F%3E%3C%2FlinearGradient%3E%3CradialGradient%20id%3D%22r%22%3E%3Cstop%20stop-color%3D%22%2326ecde%22%20stop-opacity%3D%22.55%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2326ecde%22%20stop-opacity%3D%220%22%2F%3E%3C%2FradialGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%221200%22%20height%3D%22900%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22810%22%20cy%3D%22310%22%20r%3D%22440%22%20fill%3D%22url(%23r)%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%2326ecde%22%20stroke-opacity%3D%22.26%22%3E%3Ccircle%20cx%3D%22835%22%20cy%3D%22370%22%20r%3D%22220%22%2F%3E%3Ccircle%20cx%3D%22835%22%20cy%3D%22370%22%20r%3D%22300%22%2F%3E%3Ccircle%20cx%3D%22835%22%20cy%3D%22370%22%20r%3D%22380%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M0%20700Q300%20590%20590%20760T1200%20700%22%20stroke%3D%22%2326ecde%22%20stroke-opacity%3D%22.25%22%20stroke-width%3D%224%22%20fill%3D%22none%22%2F%3E%3Ctext%20x%3D%2285%22%20y%3D%22118%22%20fill%3D%22%2326ecde%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2229%22%20letter-spacing%3D%229%22%20font-weight%3D%22700%22%3EVELTURIO%3C%2Ftext%3E%3Ctext%20x%3D%2285%22%20y%3D%22390%22%20fill%3D%22%23effaff%22%20font-family%3D%22Arial%2Csans-serif%22%20font-weight%3D%22800%22%20font-size%3D%2273%22%3EAUTOMATIZACI%C3%93N%3C%2Ftext%3E%3Ctext%20x%3D%2287%22%20y%3D%22458%22%20fill%3D%22%23b0d8e8%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2229%22%3EM%C3%A1s%20tiempo%20para%20tu%20negocio%3C%2Ftext%3E%3Ctext%20x%3D%2287%22%20y%3D%22785%22%20fill%3D%22%2368e8ed%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2222%22%20letter-spacing%3D%226%22%3EPROCESOS%20%C2%B7%20TECNOLOG%C3%8DA%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Publicidad de automatización de Velturio"><figcaption><span>02</span><b>Automatización</b></figcaption></figure>
+          <figure class="poster wide reveal delay-2"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22900%22%20viewBox%3D%220%200%201200%20900%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23040b1e%22%2F%3E%3Cstop%20offset%3D%22.55%22%20stop-color%3D%22%23073968%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2303102a%22%2F%3E%3C%2FlinearGradient%3E%3CradialGradient%20id%3D%22r%22%3E%3Cstop%20stop-color%3D%22%231bb6e9%22%20stop-opacity%3D%22.55%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231bb6e9%22%20stop-opacity%3D%220%22%2F%3E%3C%2FradialGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%221200%22%20height%3D%22900%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22810%22%20cy%3D%22310%22%20r%3D%22440%22%20fill%3D%22url(%23r)%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%231bb6e9%22%20stroke-opacity%3D%22.26%22%3E%3Ccircle%20cx%3D%22835%22%20cy%3D%22370%22%20r%3D%22220%22%2F%3E%3Ccircle%20cx%3D%22835%22%20cy%3D%22370%22%20r%3D%22300%22%2F%3E%3Ccircle%20cx%3D%22835%22%20cy%3D%22370%22%20r%3D%22380%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M0%20700Q300%20590%20590%20760T1200%20700%22%20stroke%3D%22%231bb6e9%22%20stroke-opacity%3D%22.25%22%20stroke-width%3D%224%22%20fill%3D%22none%22%2F%3E%3Ctext%20x%3D%2285%22%20y%3D%22118%22%20fill%3D%22%231bb6e9%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2229%22%20letter-spacing%3D%229%22%20font-weight%3D%22700%22%3EVELTURIO%3C%2Ftext%3E%3Ctext%20x%3D%2285%22%20y%3D%22390%22%20fill%3D%22%23effaff%22%20font-family%3D%22Arial%2Csans-serif%22%20font-weight%3D%22800%22%20font-size%3D%2273%22%3ECONTROL%20DE%20STOCK%3C%2Ftext%3E%3Ctext%20x%3D%2287%22%20y%3D%22458%22%20fill%3D%22%23b0d8e8%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2229%22%3EOrganiz%C3%A1%20tus%20productos%20y%20movimientos%3C%2Ftext%3E%3Ctext%20x%3D%2287%22%20y%3D%22785%22%20fill%3D%22%2368e8ed%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2222%22%20letter-spacing%3D%226%22%3ESTOCK%20B%C3%81SICO%20%C2%B7%20CONTROL%20%C2%B7%20PLUS%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Publicidad de sistema de stock de Velturio"><figcaption><span>03</span><b>Sistemas para negocios</b></figcaption></figure>
+          <figure class="poster wide reveal delay-3"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22900%22%20viewBox%3D%220%200%201200%20900%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23040b1e%22%2F%3E%3Cstop%20offset%3D%22.55%22%20stop-color%3D%22%23172e78%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2303102a%22%2F%3E%3C%2FlinearGradient%3E%3CradialGradient%20id%3D%22r%22%3E%3Cstop%20stop-color%3D%22%234d99fc%22%20stop-opacity%3D%22.55%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%234d99fc%22%20stop-opacity%3D%220%22%2F%3E%3C%2FradialGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%221200%22%20height%3D%22900%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22810%22%20cy%3D%22310%22%20r%3D%22440%22%20fill%3D%22url(%23r)%22%2F%3E%3Cg%20fill%3D%22none%22%20stroke%3D%22%234d99fc%22%20stroke-opacity%3D%22.26%22%3E%3Ccircle%20cx%3D%22835%22%20cy%3D%22370%22%20r%3D%22220%22%2F%3E%3Ccircle%20cx%3D%22835%22%20cy%3D%22370%22%20r%3D%22300%22%2F%3E%3Ccircle%20cx%3D%22835%22%20cy%3D%22370%22%20r%3D%22380%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M0%20700Q300%20590%20590%20760T1200%20700%22%20stroke%3D%22%234d99fc%22%20stroke-opacity%3D%22.25%22%20stroke-width%3D%224%22%20fill%3D%22none%22%2F%3E%3Ctext%20x%3D%2285%22%20y%3D%22118%22%20fill%3D%22%234d99fc%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2229%22%20letter-spacing%3D%229%22%20font-weight%3D%22700%22%3EVELTURIO%3C%2Ftext%3E%3Ctext%20x%3D%2285%22%20y%3D%22390%22%20fill%3D%22%23effaff%22%20font-family%3D%22Arial%2Csans-serif%22%20font-weight%3D%22800%22%20font-size%3D%2273%22%3EINTELIGENCIA%20ARTIFICIAL%3C%2Ftext%3E%3Ctext%20x%3D%2287%22%20y%3D%22458%22%20fill%3D%22%23b0d8e8%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2229%22%3EAtenci%C3%B3n%20inteligente%20con%20Veli%3C%2Ftext%3E%3Ctext%20x%3D%2287%22%20y%3D%22785%22%20fill%3D%22%2368e8ed%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2222%22%20letter-spacing%3D%226%22%3ECHATBOTS%20%C2%B7%20WHATSAPP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Publicidad de atención al cliente con IA de Velturio"><figcaption><span>04</span><b>Atención inteligente</b></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Las iniciales se reemplazarán con fotos de cada integrante cuando estén disponibles. -->
+    <section class="team section-pad" id="equipo" aria-labelledby="teamTitle">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="kicker">QUIÉNES SOMOS</span>
+            <h2 id="teamTitle">Personas detrás<br>de cada proyecto.</h2>
+          </div>
+          <p>Somos Velturio: un equipo de cuatro socios que combina desarrollo tecnológico y creatividad. Nacimos de la iniciativa de Juan Eduardo Caballero para convertir ideas en soluciones digitales para negocios.</p>
+        </div>
+        <div class="team-intro reveal">
+          <p>Unimos programación, diseño y marketing para desarrollar herramientas útiles y ayudar a que cada marca tenga su propia identidad.</p>
+        </div>
+        <div class="team-grid">
+          <article class="member-card reveal">
+            <div class="member-avatar" aria-label="Iniciales de Juan Eduardo Caballero"><span>JEC</span></div>
+            <span class="member-area">MARKETING Y DISEÑO</span>
+            <h3>Juan Eduardo Caballero</h3>
+            <p class="member-role">Fundador · Creativo</p>
+            <p>Identidad de marca, logotipos, mascotas y publicidad.</p>
+          </article>
+          <article class="member-card reveal delay-1">
+            <div class="member-avatar" aria-label="Iniciales de José Núñez"><span>JN</span></div>
+            <span class="member-area">DESARROLLO TECNOLÓGICO</span>
+            <h3>José Núñez</h3>
+            <p class="member-role">Socio · Desarrollador</p>
+            <p>Programación, desarrollo web y creación de sistemas.</p>
+          </article>
+          <article class="member-card reveal delay-2">
+            <div class="member-avatar" aria-label="Iniciales de Diego Vallejos"><span>DV</span></div>
+            <span class="member-area">DESARROLLO TECNOLÓGICO</span>
+            <h3>Diego Vallejos</h3>
+            <p class="member-role">Socio · Desarrollador</p>
+            <p>Programación, desarrollo web y soluciones informáticas.</p>
+          </article>
+          <article class="member-card reveal delay-3">
+            <div class="member-avatar" aria-label="Iniciales de Amin Almiron"><span>AA</span></div>
+            <span class="member-area">MARKETING Y DISEÑO</span>
+            <h3>Amin Almiron</h3>
+            <p class="member-role">Socio · Creativo</p>
+            <p>Publicidad, identidad visual, logotipos y mascotas.</p>
+          </article>
+        </div>
+        <p class="team-footnote reveal">Dos áreas, un mismo objetivo: tecnología funcional y comunicación visual que se complementan.</p>
+      </div>
+    </section>
+
+    <section class="contact section-pad" id="contacto">
+      <div class="container contact-card reveal">
+        <div class="contact-glow"></div>
+        <div class="contact-copy"><span class="kicker">HABLEMOS</span><h2>¿Tenés una idea para<br>tu negocio?</h2><p>Contanos qué querés mejorar y vemos juntos qué solución encaja mejor.</p><a class="company-contact-link" href="https://wa.me/595973345751" target="_blank" rel="noopener noreferrer">Atención al cliente · +595 973 345751 <span aria-hidden="true">↗</span></a></div>
+        <form class="contact-form" id="contactForm">
+          <label>Tu nombre<input id="name" type="text" placeholder="¿Cómo te llamás?" required></label>
+          <label>¿Qué te interesa?
+            <select id="interest">
+              <option>Una página web</option><option>Un sistema de stock</option><option>Un sistema o aplicación a medida</option><option>Un videojuego</option><option>Un chatbot o CRM</option><option>Automatizaciones / IA</option><option>Diseño de feed y redes</option><option>Videos publicitarios</option><option>Mascotas de marca</option><option>Videos con mascota</option><option>Jingles y música</option><option>Velturio 360</option><option>Otro servicio</option>
+            </select>
+          </label>
+          <label>Contanos brevemente<textarea id="message" rows="4" placeholder="Ej: Tengo una tienda y quiero controlar mejor mi stock..."></textarea></label>
+          <button class="btn btn-primary submit" type="submit">Enviar por WhatsApp <span>↗</span></button>
+          <small>No se envía nada automáticamente: se abrirá WhatsApp con tu mensaje listo.</small>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand"><img src="data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20700%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%22%20y1%3D%220%22%20x2%3D%221%22%20y2%3D%220%22%3E%3Cstop%20stop-color%3D%22%232681ff%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%2327e8e9%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22700%22%20height%3D%22200%22%20fill%3D%22none%22%2F%3E%3Cpath%20d%3D%22M22%2055%2080%20155%20138%2055h-36L80%20104%2058%2055Z%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%22163%22%20y%3D%22125%22%20fill%3D%22%23f7fbff%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2265%22%20font-weight%3D%22800%22%20letter-spacing%3D%227%22%3EVELTURIO%3C%2Ftext%3E%3C%2Fsvg%3E" alt="Velturio"><p>Tu aliado en tecnología, IA y negocios.</p></div>
+      <div><span>Explorar</span><a href="#servicios">Servicios</a><a href="#portafolio">Portafolio</a><a href="#precios">Precios</a><a href="#sistemas">Sistemas</a><a href="#equipo">Nuestro equipo</a></div>
+      <div><span>Contacto</span><a href="https://wa.me/595973345751" target="_blank" rel="noopener noreferrer">WhatsApp · +595 973 345751</a><a href="https://www.instagram.com/_velturio/" target="_blank" rel="noreferrer">Instagram</a><a href="https://www.tiktok.com/@velturio" target="_blank" rel="noreferrer">TikTok</a></div>
+      <div class="footer-cta"><span>¿Empezamos?</span><a href="#contacto">Contanos tu idea <b>↗</b></a></div>
+    </div>
+    <div class="container footer-bottom"><span>© <span id="year"></span> Velturio</span><span>Diseño · Tecnología · Automatización</span></div>
+  </footer>
+
+  <a class="wa-float" href="https://wa.me/595973345751" target="_blank" rel="noreferrer" aria-label="Escribir a Velturio por WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.1 3.1A12.7 12.7 0 0 0 5.2 22.3L3.5 28.6l6.4-1.7A12.7 12.7 0 1 0 16.1 3.1Zm0 22.9a10.5 10.5 0 0 1-5.3-1.4l-.4-.2-3.8 1 1-3.7-.3-.4A10.5 10.5 0 1 1 16.1 26Zm5.8-7.8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.6 8.6 0 0 1-2.6-1.6 9.7 9.7 0 0 1-1.8-2.3c-.2-.3 0-.5.1-.7l.5-.6.3-.6c.1-.2.1-.4 0-.6s-.7-1.8-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.9 1.2 3.3 1.4 3.5a12 12 0 0 0 4.6 4.1c1.7.7 2.3.8 3.1.7 1-.1 1.9-.8 2.2-1.5s.3-1.3.2-1.4-.3-.2-.6-.4Z"/></svg>
+  </a>
+
+  <script>
+const header = document.querySelector('.site-header');
+const menuBtn = document.getElementById('menuBtn');
+const nav = document.getElementById('nav');
+const year = document.getElementById('year');
+const glow = document.getElementById('cursorGlow');
+
+year.textContent = new Date().getFullYear();
+
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+menuBtn.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  menuBtn.classList.toggle('active', open);
+  menuBtn.setAttribute('aria-expanded', String(open));
+  document.body.classList.toggle('menu-open', open);
+});
+
+document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click', () => {
+  nav.classList.remove('open');
+  menuBtn.classList.remove('active');
+  menuBtn.setAttribute('aria-expanded', 'false');
+  document.body.classList.remove('menu-open');
+}));
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.13 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+if (window.matchMedia('(pointer:fine)').matches) {
+  window.addEventListener('pointermove', e => {
+    glow.style.left = `${e.clientX}px`;
+    glow.style.top = `${e.clientY}px`;
+  });
+}
+
+
+
+// Evita que el botón flotante de WhatsApp tape texto en la sección de contacto o el pie de página.
+const waFloat = document.querySelector('.wa-float');
+const waBlockers = [document.querySelector('#contacto'), document.querySelector('footer')].filter(Boolean);
+const visibleBlockers = new Set();
+
+if (waFloat && waBlockers.length) {
+  const waObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) visibleBlockers.add(entry.target);
+      else visibleBlockers.delete(entry.target);
+    });
+    waFloat.classList.toggle('is-hidden', visibleBlockers.size > 0);
+  }, { threshold: 0.08 });
+
+  waBlockers.forEach((el) => waObserver.observe(el));
+}
+
+document.getElementById('contactForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const interest = document.getElementById('interest').value;
+  const message = document.getElementById('message').value.trim();
+  const text = `Hola Velturio, soy ${name}. Me interesa: ${interest}.${message ? `\n\n${message}` : ''}`;
+  window.open(`https://wa.me/595973345751?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+});
+
+
+// Filtrado accesible de los proyectos del portafolio.
+const projectFilters = document.querySelectorAll('[data-project-filter]');
+const projectCards = document.querySelectorAll('[data-project-category]');
+projectFilters.forEach((button) => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.projectFilter;
+    projectFilters.forEach((item) => {
+      const isSelected = item === button;
+      item.classList.toggle('is-active', isSelected);
+      item.setAttribute('aria-pressed', String(isSelected));
+    });
+    projectCards.forEach((card) => {
+      const show = filter === 'all' || card.dataset.projectCategory === filter;
+      card.hidden = !show;
+      if (show) card.classList.add('visible');
+    });
+  });
+});
+
+</script>
+</body>
+</html>
