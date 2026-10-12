@@ -67,7 +67,7 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
   const interest = document.getElementById('interest').value;
   const message = document.getElementById('message').value.trim();
   const text = `Hola Velturio, soy ${name}. Me interesa: ${interest}.${message ? `\n\n${message}` : ''}`;
-  window.open(`https://wa.me/595991737133?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+  window.open(`https://wa.me/595973345751?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
 });
 
 
