@@ -263,3 +263,9 @@ section[id]{scroll-margin-top:88px}
 .catalog-plan-heading{flex-direction:column;gap:7px}
 .catalog-price{text-align:left}
 }
+
+/* Prestaciones complementarias (incluyen desarrollo y marketing) */
+.catalog-extras{margin-top:28px;padding:22px;border:1px solid rgba(60,169,226,.16);background:rgba(7,20,39,.52);border-radius:18px;display:grid;grid-template-columns:.85fr 1.15fr;gap:24px;align-items:start}
+.catalog-extras h3{font-size:25px;line-height:1.2;margin:10px 0 0;letter-spacing:-.03em}
+.catalog-extras>.catalog-group{min-width:0}
+@media(max-width:760px){.catalog-extras{grid-template-columns:1fr;padding:15px;gap:15px}}
