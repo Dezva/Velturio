@@ -97,3 +97,64 @@ footer{border-top:1px solid var(--line);padding:65px 0 24px;background:#02060f}.
   .footer-grid{grid-template-columns:1fr}
   .footer-brand,.footer-cta{grid-column:auto}
 }
+
+
+/* Atención al cliente con Veli: sección visible y enlace exclusivo al número del bot. */
+.veli-support{
+  position:relative;
+  isolation:isolate;
+  background:radial-gradient(circle at 75% 50%,rgba(19,117,238,.16),transparent 42%),
+             linear-gradient(180deg,#030713 0%,#061428 50%,#030713 100%);
+}
+.veli-support-layout{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:72px}
+.veli-support-copy,.veli-support-visual{min-width:0}
+.veli-support-copy h2{font-size:clamp(39px,5vw,64px);line-height:1.04;letter-spacing:-.045em;margin:19px 0 23px}
+.veli-support-copy h2 span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.veli-support-copy>p:not(.veli-support-disclaimer){max-width:560px;color:#a2b6cf;font-size:16px;line-height:1.75}
+.veli-support-copy>p strong{color:#e1f8fd}
+.veli-support-points{display:grid;gap:12px;margin:29px 0 31px}
+.veli-support-points span{display:flex;gap:12px;align-items:center;color:#c1d3e7;font-size:13px;line-height:1.5}
+.veli-support-points i{font-style:normal;color:#36e4eb;width:25px;height:25px;flex:0 0 25px;border:1px solid rgba(54,228,235,.27);border-radius:50%;display:grid;place-items:center;background:rgba(30,198,225,.07)}
+.veli-support-actions{display:flex;flex-wrap:wrap;gap:12px}
+.veli-support-actions a{text-align:center}
+.veli-support-disclaimer{font-size:11px;color:#7c93ac;margin:19px 0 0;line-height:1.65;max-width:570px}
+.veli-support-visual{min-height:460px;display:grid;place-items:center;position:relative}
+.veli-support-orbit{position:absolute;width:min(100%,490px);aspect-ratio:1;border:1px solid rgba(46,217,234,.11);border-radius:50%;box-shadow:0 0 110px rgba(17,115,247,.14),inset 0 0 100px rgba(24,170,227,.06);pointer-events:none}
+.veli-support-orbit:after{content:"";position:absolute;inset:36px;border:1px dashed rgba(63,177,235,.12);border-radius:50%}
+.veli-support-chat{position:relative;z-index:1;width:min(100%,405px);border-radius:22px;overflow:hidden;border:1px solid rgba(67,190,238,.29);background:linear-gradient(160deg,rgba(10,29,55,.97),rgba(5,17,34,.97));box-shadow:0 30px 70px rgba(0,0,0,.35),0 0 65px rgba(11,99,211,.08)}
+.veli-chat-header{display:flex;align-items:center;gap:12px;padding:18px 20px;border-bottom:1px solid rgba(90,175,233,.16)}
+.veli-chat-avatar{width:44px;height:44px;flex:0 0 44px;border-radius:14px;display:grid;place-items:center;color:#051627;background:var(--grad);font-size:21px;font-weight:900}
+.veli-chat-header>div:nth-child(2){flex:1;min-width:0}
+.veli-chat-header strong,.veli-chat-header small{display:block}
+.veli-chat-header strong{font-size:15px}.veli-chat-header small{font-size:10px;color:#96aeca;margin-top:3px}
+.veli-chat-symbol{color:#40dfe8;font-size:23px}
+.veli-chat-messages{padding:25px 17px;min-height:277px;display:flex;flex-direction:column;gap:15px;align-items:flex-start}
+.veli-chat-bubble{padding:12px 14px;font-size:12px;line-height:1.6;max-width:86%;border-radius:15px;background:#142c48;color:#e2effd}
+.veli-chat-bubble.incoming{border-bottom-left-radius:3px}
+.veli-chat-bubble.outgoing{align-self:flex-end;border-bottom-right-radius:3px;background:linear-gradient(130deg,#1766d9,#128ea6);color:#fff}
+.veli-chat-bottom{border-top:1px solid rgba(85,162,219,.14);padding:14px 19px;display:flex;justify-content:space-between;align-items:center;gap:10px;color:#8c9fb8;font-size:10px}
+.veli-chat-bottom span:last-child{color:#32e0e7}
+@media(min-width:761px) and (max-width:1150px){.nav{gap:14px;font-size:12px}}
+@media(min-width:761px) and (max-width:900px){
+  .menu-btn{display:block;z-index:82}
+  .nav{position:fixed;inset:0;background:rgba(3,7,19,.97);backdrop-filter:blur(20px);display:flex;flex-direction:column;justify-content:center;gap:26px;font-size:19px;transform:translateX(100%);transition:.3s}
+  .nav.open{transform:none}
+  .menu-btn.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .menu-btn.active span:nth-child(2){opacity:0}
+  .menu-btn.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+}
+@media(max-width:1050px){.veli-support-layout{grid-template-columns:1fr;gap:30px}.veli-support-copy{max-width:720px;margin-inline:auto}.veli-support-visual{min-height:395px}}
+@media(max-width:760px){
+  .veli-support-visual{min-height:370px}
+  .veli-support-copy h2{font-size:clamp(35px,8vw,49px)}
+  .veli-support-orbit{width:min(92vw,390px)}
+}
+@media(max-width:480px){
+  .veli-support-actions{flex-direction:column}
+  .veli-support-actions a{width:100%}
+  .veli-support-copy>p:not(.veli-support-disclaimer){font-size:14px}
+  .veli-support-visual{min-height:320px}
+  .veli-chat-messages{padding:15px 12px;min-height:240px}
+  .veli-chat-header{padding:13px}
+  .veli-chat-bubble{font-size:11px}
+}
