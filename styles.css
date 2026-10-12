@@ -269,3 +269,12 @@ section[id]{scroll-margin-top:88px}
 .catalog-extras h3{font-size:25px;line-height:1.2;margin:10px 0 0;letter-spacing:-.03em}
 .catalog-extras>.catalog-group{min-width:0}
 @media(max-width:760px){.catalog-extras{grid-template-columns:1fr;padding:15px;gap:15px}}
+
+
+/* Contacto oficial: número de empresa visible en atención al cliente y formulario. */
+.support-contact,.company-contact-link{display:inline-flex;align-items:center;gap:9px;max-width:100%;font-size:12px;font-weight:700;line-height:1.5;color:#5be1ed;border-bottom:1px solid rgba(50,217,234,.32);padding-bottom:4px;overflow-wrap:anywhere}
+.support-contact{margin-top:10px}
+.company-contact-link{margin-top:11px}
+.support-contact:hover,.company-contact-link:hover{color:#c6fbff;border-bottom-color:rgba(100,245,255,.72)}
+.support-contact span,.company-contact-link span{flex:0 0 auto}
+@media(max-width:460px){.support-contact,.company-contact-link{font-size:11px}}
