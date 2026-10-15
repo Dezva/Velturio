@@ -4,6 +4,10 @@ import {
   VELTURIO_INSTRUCTIONS,
   VELTURIO_HUMAN_CONTACT_REPLY,
 } from "../lib/velturio-prompt.mjs";
+import {
+  crmEnabled, commercialInterest, consentAnswer, detectService,
+  CONSENT_PROMPT, CONSENT_REJECTED, registerLead
+} from "../lib/veli-crm.mjs";
 
 const OPENAI_URL = "https://api.openai.com/v1/responses";
 
@@ -282,7 +286,8 @@ function requestsHumanContact(text) {
 }
 
 async function processTextMessage(
-  message
+  message,
+  profileName = ""
 ) {
   const waId = message.from;
   const messageId = message.id;
@@ -355,6 +360,79 @@ async function processTextMessage(
         waId
       );
 
+    // Captación comercial voluntaria: jamás escribir al CRM antes de
+    // recibir la frase de autorización explícita.
+    if (crmEnabled()) {
+      const pending = conversation.pendingLead;
+      const answer = pending ? consentAnswer(userText) : null;
+
+      if (answer === "yes") {
+        let saved;
+        try {
+          saved = await registerLead({
+            waId,
+            profileName,
+            service: pending.service,
+            consentMessageId: messageId
+          });
+        } catch (error) {
+          console.error("No se pudo registrar el contacto autorizado:", error.message);
+          await sendText(waId,
+            "Recibí tu autorización, pero ahora mismo no pude registrar la solicitud. " +
+            "Podés intentar nuevamente escribiendo *SI AUTORIZO*, o contactar directamente al equipo. " +
+            VELTURIO_HUMAN_CONTACT_REPLY);
+          return;
+        }
+
+        // Guardar el estado fuera de la transacción: el contacto ya existe en CRM.
+        try {
+          await conversations.set(waId, JSON.stringify({
+            ...conversation,
+            pendingLead: null,
+            leadDeclined: false,
+            lastLead: { service: pending.service, savedAt: Date.now() },
+            updatedAt: Date.now()
+          }));
+        } catch (error) {
+          console.warn("No se pudo actualizar el estado de consentimiento:", error.message);
+        }
+        await sendText(waId,
+          "¡Gracias! Registré tu autorización y el interés en " +
+          pending.service + ". El equipo de Velturio podrá consultar tu solicitud.\n" +
+          "Si querés hablar directamente con alguien: " +
+          VELTURIO_HUMAN_CONTACT_REPLY);
+        return;
+      }
+
+      if (answer === "no") {
+        await conversations.set(waId, JSON.stringify({
+          ...conversation,
+          pendingLead: null,
+          leadDeclined: true,
+          updatedAt: Date.now()
+        }));
+        await sendText(waId, CONSENT_REJECTED);
+        return;
+      }
+
+      if (commercialInterest(userText) && !conversation.leadDeclined) {
+        const service = detectService(userText, conversation.history);
+        const isSameRegisteredService = conversation.lastLead?.service === service;
+        if (!isSameRegisteredService && (!pending || pending.service !== service)) {
+          await conversations.set(waId, JSON.stringify({
+            ...conversation,
+            pendingLead: { service, requestedAt: Date.now() },
+            updatedAt: Date.now()
+          }));
+          const humanReply = requestsHumanContact(userText)
+            ? VELTURIO_HUMAN_CONTACT_REPLY + "\n\n"
+            : "";
+          await sendText(waId, humanReply + CONSENT_PROMPT);
+          return;
+        }
+      }
+    }
+
     let reply;
 
     if (requestsHumanContact(userText)) {
@@ -396,6 +474,7 @@ async function processTextMessage(
       await conversations.set(
         waId,
         JSON.stringify({
+          ...conversation,
           history: newHistory,
           updatedAt: Date.now(),
         })
@@ -517,6 +596,8 @@ export default async (
           )
         ),
 
+      crmIntegrationEnabled: crmEnabled(),
+
       model: env(
         "OPENAI_MODEL",
         "gpt-5.6-luna"
@@ -615,7 +696,8 @@ export default async (
           ) {
             jobs.push(
               processTextMessage(
-                message
+                message,
+                value?.contacts?.find(c => c?.wa_id === message.from)?.profile?.name || ""
               )
             );
           } else if (
