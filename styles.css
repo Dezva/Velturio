@@ -397,3 +397,14 @@ section[id]{scroll-margin-top:88px}
 .stock-photo-fallback small{font-size:11px;color:#7896b6;font-weight:500}
 .stock-product-image:has(img[hidden]) .stock-photo-fallback{display:flex!important}
 .stock-product-image:has(img[hidden])>span:not(.stock-photo-fallback){display:none}
+
+
+/* Retratos del equipo: imágenes optimizadas, recorte uniforme y respaldo por iniciales. */
+.member-avatar{width:132px;height:132px;flex:0 0 132px;border:2px solid rgba(53,214,234,.55);position:relative}
+.member-avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:2;transition:transform .35s}
+.member-avatar img[hidden]{display:none}
+.member-avatar:has(img:not([hidden])) span{opacity:0}
+.member-avatar span{position:relative;z-index:1}
+.member-card:hover .member-avatar img{transform:scale(1.055)}
+@media(max-width:760px){.member-avatar{width:112px;height:112px;flex-basis:112px}}
+@media(prefers-reduced-motion:reduce){.member-avatar img{transition:none}}
