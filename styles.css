@@ -339,3 +339,12 @@ section[id]{scroll-margin-top:88px}
   .veli-chat-header{padding:13px}
   .veli-chat-bubble{font-size:11px}
 }
+
+/* Imágenes auténticas en el portafolio: la ilustración sigue visible si el recurso aún no se subió. */
+.portfolio-visual .project-photo{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+.portfolio-visual .project-photo[hidden]{display:none}
+.portfolio-visual .logo-photo{object-fit:contain;background:#000}
+.portfolio-visual:has(.project-photo:not([hidden])) .art-center{opacity:0}
+.portfolio-visual .preview-top,.portfolio-visual .preview-foot{z-index:2}
+.portfolio-visual.art-hellion{background:radial-gradient(circle at 50% 50%,rgba(97,153,209,.16),transparent 66%),#030609}
+.portfolio-visual.art-game .project-photo{object-position:50% 45%}
