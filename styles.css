@@ -348,3 +348,15 @@ section[id]{scroll-margin-top:88px}
 .portfolio-visual .preview-top,.portfolio-visual .preview-foot{z-index:2}
 .portfolio-visual.art-hellion{background:radial-gradient(circle at 50% 50%,rgba(97,153,209,.16),transparent 66%),#030609}
 .portfolio-visual.art-game .project-photo{object-position:50% 45%}
+
+
+/* Capturas reales de Stock: portada del producto y galería ampliable. */
+.portfolio-visual .project-photo-stock{object-fit:contain;background:linear-gradient(135deg,#f4f7fd,#dfe7f3)}
+.stock-screen-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}
+.stock-screen-gallery a{display:flex;flex-direction:column;gap:8px;min-width:0;overflow:hidden;border:1px solid rgba(89,169,233,.25);border-radius:10px;background:#0a1b2c;text-decoration:none;color:#d6edff;transition:border-color .2s,transform .2s}
+.stock-screen-gallery a:hover{border-color:rgba(65,231,244,.75);transform:translateY(-2px)}
+.stock-screen-gallery a[hidden]{display:none}
+.stock-screen-gallery img{display:block;width:100%;height:74px;object-fit:cover;object-position:top left;background:#eef4fc}
+.stock-screen-gallery a span{padding:0 9px 9px;display:flex;gap:4px;justify-content:space-between;align-items:center;font-size:10px;font-weight:700}
+.stock-screen-gallery a b{color:#39e1e8}
+@media(max-width:460px){.stock-screen-gallery{grid-template-columns:1fr 1fr}.stock-screen-gallery img{height:88px}}
