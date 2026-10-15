@@ -423,3 +423,7 @@ section[id]{scroll-margin-top:88px}
 .project-details-content .hellion-case-note{font-size:11px;color:#83a1bb;line-height:1.6;margin:13px 0 0}
 @media(max-width:440px){.hellion-case-gallery{grid-template-columns:1fr}.hellion-case-gallery img{aspect-ratio:16/9}}
 @media(prefers-reduced-motion:reduce){.hellion-case-gallery img{transition:none}}
+
+/* Galería legible aunque todavía falten los recursos en esta rama. */
+.hellion-case-gallery [hidden]{display:none!important}
+.hellion-case-gallery .hellion-image-fallback:not([hidden]){position:static;display:grid;place-items:center;text-align:center;aspect-ratio:16/9;padding:20px;border-radius:0;background:linear-gradient(135deg,#0b2542,#061025);color:#89cde4;font-size:12px;line-height:1.55}
