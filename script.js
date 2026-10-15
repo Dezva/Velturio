@@ -67,5 +67,40 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
   const interest = document.getElementById('interest').value;
   const message = document.getElementById('message').value.trim();
   const text = `Hola Velturio, soy ${name}. Me interesa: ${interest}.${message ? `\n\n${message}` : ''}`;
-  window.open(`https://wa.me/595991737133?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+  window.open(`https://wa.me/595973345751?text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+});
+
+
+// Filtrado accesible de los proyectos del portafolio.
+const projectFilters = document.querySelectorAll('[data-project-filter]');
+const projectCards = document.querySelectorAll('[data-project-category]');
+projectFilters.forEach((button) => {
+  button.addEventListener('click', () => {
+    const filter = button.dataset.projectFilter;
+    projectFilters.forEach((item) => {
+      const isSelected = item === button;
+      item.classList.toggle('is-active', isSelected);
+      item.setAttribute('aria-pressed', String(isSelected));
+    });
+    projectCards.forEach((card) => {
+      const show = filter === 'all' || card.dataset.projectCategory === filter;
+      card.hidden = !show;
+      if (show) card.classList.add('visible');
+    });
+  });
+});
+
+
+// Los botones de Stock seleccionan el producto antes de abrir el formulario de contacto.
+document.querySelectorAll('[data-stock-product]').forEach((link) => {
+  link.addEventListener('click', () => {
+    const product = link.getAttribute('data-stock-product');
+    const interest = document.getElementById('interest');
+    const message = document.getElementById('message');
+    if (interest) {
+      const stockOption = [...interest.options].find((option) => option.textContent.trim() === 'Un sistema de stock');
+      if (stockOption) interest.value = stockOption.value;
+    }
+    if (message && !message.value.trim()) message.value = 'Quisiera consultar por ' + product + '.';
+  });
 });

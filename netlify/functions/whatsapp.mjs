@@ -1,6 +1,9 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
 import { getStore } from "@netlify/blobs";
-import { VELTURIO_INSTRUCTIONS } from "../lib/velturio-prompt.mjs";
+import {
+  VELTURIO_INSTRUCTIONS,
+  VELTURIO_HUMAN_CONTACT_REPLY,
+} from "../lib/velturio-prompt.mjs";
 
 const OPENAI_URL = "https://api.openai.com/v1/responses";
 
@@ -255,6 +258,29 @@ async function askVeli(
   return reply;
 }
 
+
+function requestsHumanContact(text) {
+  const normalized = String(text || "")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+
+  const directNumberRequest =
+    /\b(?:telefono|whatsapp|celular|numero)\b/.test(normalized) &&
+    (
+      /\b(?:empresa|velturio|ustedes|equipo|asesor|persona|humano|contacto|personal)\b/.test(normalized) ||
+      /\b(?:tu|su|sus|nuestro)\s+(?:numero|telefono|celular|whatsapp)\b/.test(normalized) ||
+      /\bnumero\s+de\s+(?:telefono|whatsapp|contacto)\b/.test(normalized) ||
+      /\b(?:dame|pasame|compartime|enviame)\s+(?:el|su)\s+numero\b/.test(normalized)
+    );
+
+  const humanHelp =
+    /\b(?:hablar|contactar|comunicarme|derivar|atender|pasar)\b/.test(normalized) &&
+    /\b(?:alguien|persona|humano|asesor|vendedor|equipo|personal|encargado|representante)\b/.test(normalized);
+
+  return directNumberRequest || humanHelp;
+}
+
 async function processTextMessage(
   message
 ) {
@@ -329,10 +355,25 @@ async function processTextMessage(
         waId
       );
 
-    const reply = await askVeli(
-      conversation.history,
-      userText
-    );
+    let reply;
+
+    if (requestsHumanContact(userText)) {
+      // Respuesta garantizada para peticiones directas de contacto;
+      // no depende de la disponibilidad de la IA.
+      reply = VELTURIO_HUMAN_CONTACT_REPLY;
+    } else {
+      try {
+        reply = await askVeli(
+          conversation.history,
+          userText
+        );
+      } catch (error) {
+        // Si la IA falla, no inventamos una respuesta: derivamos al equipo.
+        console.error("Veli no pudo responder con IA:", error);
+        reply = "Por el momento no puedo responder con seguridad. " +
+          VELTURIO_HUMAN_CONTACT_REPLY;
+      }
+    }
 
     await sendText(
       waId,
