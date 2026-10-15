@@ -408,3 +408,22 @@ section[id]{scroll-margin-top:88px}
 .member-card:hover .member-avatar img{transform:scale(1.055)}
 @media(max-width:760px){.member-avatar{width:112px;height:112px;flex-basis:112px}}
 @media(prefers-reduced-motion:reduce){.member-avatar img{transition:none}}
+
+
+/* Caso real Hellion: galería de publicaciones, identidad y productos. */
+.hellion-case-gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0 12px}
+.hellion-case-gallery figure{margin:0;min-width:0;background:rgba(7,21,42,.92);border:1px solid rgba(53,173,228,.24);border-radius:12px;overflow:hidden}
+.hellion-case-gallery a{position:relative;display:block;border:0!important;padding:0!important;overflow:hidden}
+.hellion-case-gallery img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;transition:transform .3s ease}
+.hellion-case-gallery a:hover img{transform:scale(1.045)}
+.hellion-case-gallery a span{position:absolute;right:5px;bottom:5px;padding:5px 7px;border-radius:6px;background:rgba(5,16,33,.83);color:#c7faff;font-size:9px}
+.hellion-case-gallery figcaption{display:flex;flex-direction:column;gap:4px;padding:10px 11px}
+.hellion-case-gallery figcaption b{font-size:11px;color:#e4efff}
+.hellion-case-gallery figcaption small{color:#7fa1bb;font-size:10px}
+.project-details-content .hellion-case-note{font-size:11px;color:#83a1bb;line-height:1.6;margin:13px 0 0}
+@media(max-width:440px){.hellion-case-gallery{grid-template-columns:1fr}.hellion-case-gallery img{aspect-ratio:16/9}}
+@media(prefers-reduced-motion:reduce){.hellion-case-gallery img{transition:none}}
+
+/* Galería legible aunque todavía falten los recursos en esta rama. */
+.hellion-case-gallery [hidden]{display:none!important}
+.hellion-case-gallery .hellion-image-fallback:not([hidden]){position:static;display:grid;place-items:center;text-align:center;aspect-ratio:16/9;padding:20px;border-radius:0;background:linear-gradient(135deg,#0b2542,#061025);color:#89cde4;font-size:12px;line-height:1.55}
