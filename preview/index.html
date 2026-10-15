@@ -350,6 +350,16 @@ section[id]{scroll-margin-top:88px}
   .veli-chat-bubble{font-size:11px}
 }
 
+
+/* Imágenes auténticas en el portafolio: la ilustración sigue visible si el recurso aún no se subió. */
+.portfolio-visual .project-photo{position:absolute;inset:0;z-index:1;width:100%;height:100%;object-fit:cover;display:block}
+.portfolio-visual .project-photo[hidden]{display:none}
+.portfolio-visual .logo-photo{object-fit:contain;background:#000}
+.portfolio-visual:has(.project-photo:not([hidden])) .art-center{opacity:0}
+.portfolio-visual .preview-top,.portfolio-visual .preview-foot{z-index:2}
+.portfolio-visual.art-hellion{background:radial-gradient(circle at 50% 50%,rgba(97,153,209,.16),transparent 66%),#030609}
+.portfolio-visual.art-game .project-photo{object-position:50% 45%}
+
 </style>
   <!-- Vista de prueba autónoma: gráficos ilustrativos integrados como SVG, sin archivos adicionales. -->
 </head>
@@ -616,8 +626,8 @@ section[id]{scroll-margin-top:88px}
           <p>Diseño, desarrollo web, software, automatización y videojuegos. Explorá nuestros trabajos y conocé qué hicimos en cada uno.</p>
         </div>
         <div class="portfolio-filters reveal" role="group" aria-label="Filtrar proyectos">
-          <button type="button" class="portfolio-filter is-active" data-project-filter="all" aria-pressed="true">Todos <span>11</span></button>
-          <button type="button" class="portfolio-filter" data-project-filter="design" aria-pressed="false">Diseño <span>4</span></button>
+          <button type="button" class="portfolio-filter is-active" data-project-filter="all" aria-pressed="true">Todos <span>12</span></button>
+          <button type="button" class="portfolio-filter" data-project-filter="design" aria-pressed="false">Diseño <span>5</span></button>
           <button type="button" class="portfolio-filter" data-project-filter="web" aria-pressed="false">Webs <span>2</span></button>
           <button type="button" class="portfolio-filter" data-project-filter="systems" aria-pressed="false">Sistemas <span>3</span></button>
           <button type="button" class="portfolio-filter" data-project-filter="ai" aria-pressed="false">IA <span>1</span></button>
@@ -646,9 +656,9 @@ section[id]{scroll-margin-top:88px}
  </div>
  <div class="portfolio-body">
   <span class="project-type">SISTEMAS Y APPS</span>
-  <h3>Stock Velturio</h3><p>Línea de tres sistemas prediseñados para inventario y gestión de negocios.</p>
+  <h3>Stock Velturio</h3><p>Tres aplicaciones de escritorio para Windows que organizan inventario y ventas. Desarrolladas con Python y SQLite, con diferentes niveles de gestión.</p>
   <details class="project-details"><summary>Conocer el proyecto <span aria-hidden="true">+</span></summary>
-    <div class="project-details-content"><strong>Objetivo</strong><p>Ofrecer alternativas de gestión de stock con diferentes niveles de funciones.</p><strong>Trabajo de Velturio</strong><p>Stock Básico, Stock Control y Stock Plus; productos, movimientos e informes según cada plan.</p><strong>Material para el caso</strong><p>Pantallas reales de cada versión y comparativa de sus funcionalidades.</p></div>
+    <div class="project-details-content"><strong>Objetivo</strong><p>Ofrecer alternativas de gestión de stock con diferentes niveles de funciones.</p><strong>Versiones verificadas en el código</strong><p><b>Básico:</b> categorías, productos, entradas y salidas, historial, exportación CSV y respaldos. <b>Control:</b> agrega costos, precios de venta, proveedores y alertas de stock mínimo. <b>Plus:</b> suma usuarios y permisos, clientes, compras, ventas, caja, devoluciones, comprobantes y reportes.</p><strong>Tecnología</strong><p>Python, interfaz de escritorio Tkinter y base de datos SQLite. Los tres proyectos incluyen ejecutables para Windows.</p><strong>Material para el caso</strong><p>Capturas reales pendientes de las tres aplicaciones. No se utilizan las imágenes de ejemplo como capturas auténticas.</p></div>
   </details>
   <div class="portfolio-action"><a href="#sistemas">Ver planes <span aria-hidden="true">↗</span></a></div>
  </div></article>
@@ -750,6 +760,19 @@ section[id]{scroll-margin-top:88px}
   </details>
   
  </div></article>
+<article class="portfolio-card reveal" data-project-category="design">
+ <div class="portfolio-visual portfolio-art art-hellion" aria-label="Diseño del logotipo de Hellion">
+  
+  <div class="preview-top"><span>IDENTIDAD VISUAL</span><span aria-hidden="true">✦</span></div>
+  <div class="art-center"><span class="art-graphic" aria-hidden="true">♛</span><strong>HELLION</strong><small>Marca de ropa deportiva</small></div>
+  <div class="preview-foot"><span>MARCA · LOGOTIPO</span><span>Diseño gráfico</span></div>
+ </div>
+ <div class="portfolio-body">
+  <span class="project-type">IDENTIDAD VISUAL · LOGOTIPO</span>
+  <h3>Hellion</h3><p>Propuesta de logotipo para una marca de ropa de gimnasio: tipografía blanca integrada con una silueta de corona sobre fondo negro.</p>
+  <details class="project-details"><summary>Conocer el proyecto <span aria-hidden="true">+</span></summary><div class="project-details-content"><strong>Objetivo</strong><p>Construir una identidad distintiva para la marca deportiva Hellion.</p><strong>Material disponible</strong><p>Diseño del logotipo facilitado para el portafolio. No se presenta como una tienda o producto lanzado.</p></div></details>
+ </div>
+</article>
 <article class="portfolio-card reveal" data-project-category="game">
  <div class="portfolio-visual portfolio-art art-game" aria-label="Gráfico ilustrativo de Massive Nightmare">
   <div class="preview-top"><span>VIDEOJUEGOS</span><span aria-hidden="true">✦</span></div>
@@ -882,7 +905,7 @@ section[id]{scroll-margin-top:88px}
     <section class="contact section-pad" id="contacto">
       <div class="container contact-card reveal">
         <div class="contact-glow"></div>
-        <div class="contact-copy"><span class="kicker">HABLEMOS</span><h2>¿Tenés una idea para<br>tu negocio?</h2><p>Contanos qué querés mejorar y vemos juntos qué solución encaja mejor.</p><a class="company-contact-link" href="https://wa.me/595973345751" target="_blank" rel="noopener noreferrer">Atención al cliente · +595 973 345751 <span aria-hidden="true">↗</span></a></div>
+        <div class="contact-copy"><span class="kicker">HABLEMOS</span><h2>¿Tenés una idea para<br>tu negocio?</h2><p>Contanos qué querés mejorar y vemos juntos qué solución encaja mejor.</p></div>
         <form class="contact-form" id="contactForm">
           <label>Tu nombre<input id="name" type="text" placeholder="¿Cómo te llamás?" required></label>
           <label>¿Qué te interesa?
