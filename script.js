@@ -89,3 +89,18 @@ projectFilters.forEach((button) => {
     });
   });
 });
+
+
+// Los botones de Stock seleccionan el producto antes de abrir el formulario de contacto.
+document.querySelectorAll('[data-stock-product]').forEach((link) => {
+  link.addEventListener('click', () => {
+    const product = link.getAttribute('data-stock-product');
+    const interest = document.getElementById('interest');
+    const message = document.getElementById('message');
+    if (interest) {
+      const stockOption = [...interest.options].find((option) => option.textContent.trim() === 'Un sistema de stock');
+      if (stockOption) interest.value = stockOption.value;
+    }
+    if (message && !message.value.trim()) message.value = 'Quisiera consultar por ' + product + '.';
+  });
+});
